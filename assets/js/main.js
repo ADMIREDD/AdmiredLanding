@@ -1,21 +1,14 @@
 function generateQuota() {
-    const data = {
-        ID: 1, // Sustituye con el ID correcto
-        FECHA: '2024-06-24', // Sustituye con la fecha correcta
-        ESTADOS: 'Activo', // Sustituye con el estado correcto
-        FECHA_LIMITE: '2024-07-24', // Sustituye con la fecha límite correcta
-        PRECIO: 1000 // Sustituye con el precio correcto
-    };
+    const formdata = new FormData();
+    formdata.append("FECHA", "2024-08-05");
+    formdata.append("ESTADO", "pendiente");
+    formdata.append("FECHA_LIMITE", "2024-10-05");
+    formdata.append("PRECIO", "50000");
 
     fetch('http://localhost:8080/api/cuotas_administracion/create', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer YOUR_ACCESS_TOKEN', 
-            'X-Custom-Header': 'CustomHeaderValue'
-            // Otros encabezados si son necesarios
-        },
-        body: JSON.stringify(data) // El cuerpo de la solicitud
+       
+        body: formdata // El cuerpo de la solicitud
     })
     .then(response => {
         if (!response.ok) {

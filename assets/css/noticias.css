@@ -1,59 +1,44 @@
-.noticia-container {
-    width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+body {
+    background-image: url(https://a0.muscache.com/im/pictures/c880c2f8-e15c-48dd-b6cb-d756ea3c51f9.jpg?im_w=720);
+    background-size: cover;
+    height: 100vh;
+  }
+  .page-title-box h1 {
+    text-align: center;
+    font-size: 3rem; /* Tamaño de fuente más grande para el título principal */
+  }
+  
+  .noticia-container {
     display: flex;
-}
-
-.imagen-noticia {
-    width: 800%; /* Ajusta el ancho de la imagen según tus necesidades */
-}
-.volver{
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.noticia-titulo {
-    font-family: 'Roboto', sans-serif;
-    font-size: 32px;
-    font-weight: bold;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 20px;
-    background-color: #bbbbbb;
-    color: #000000;
-    margin: 0;
-}
-
-.noticia-fecha {
-    color: #888;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0 20px;
-}
-
-.noticia-cuerpo {
-    font-family: 'Roboto', sans-serif;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255);
+    margin-top: 20px;
+    background-color: rgba(144, 144, 144, 0.4); /* Fondo del recuadro */
+  }
+  
+  .noticia-titulo {
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 20px;
-    line-height: 1.1;
-    margin: 20px;
-    padding: 10;
-}
-
-.imagen {
-    max-width: 100%;
-    left: 500;
-    top: 500;
-    width: 550px;
-    height: 894px;
-    
-}
-@media (max-width: 768px) {
-    .imagen {
-        max-width: 100%;
-        height: auto;
-    }
-}
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .noticia-titulo h1 {
+    font-size: 2.5rem; /* Tamaño de fuente más grande para el título */
+  }
+  
+  .noticia-fecha {
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .noticia-cuerpo {
+    line-height: 35px;
+    font-size: 30px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
