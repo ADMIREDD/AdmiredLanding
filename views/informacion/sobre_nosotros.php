@@ -1,8 +1,17 @@
-<link rel="stylesheet" href="assets/css/sobre_nosotros.css">
-<a href="?c=dashboard&m=dashboard" class="volver">←Volver</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/sobre_nosotros.css">
+    <title>SOBRE NOSOTROS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
 <div class="container">
     <div class="row">
-        <h2>Sobre Nosotros</h2>
+        <h1>Sobre Nosotros</h1>
         <p class="parrafo">Somos un aplicativo web que permite que los usuarios y administradores puedan conocer más a fondo
             su apartamento, casa o condominio. Dando como beneficios
             Seguridad.
@@ -48,3 +57,5 @@
             Quejas y Sugerencias.</p>
     </div>
 </div>
+</body>
+</html>

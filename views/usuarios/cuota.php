@@ -1,46 +1,70 @@
-<link rel="stylesheet" href="/assets/cuotas.css">
-<div class="content-page">
-    <div class="content">
 
-        <!-- Start Content-->
-        <div class="container-fluid">
 
-            <!-- start page title -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="page-title-box">
-                        <h4 class="page-title">Cuota de Administración</h4>
-                        <a href="?c=principal&m=principal" class="volver">←Volver</a>
-                        <div class="containerr">
-                            <h1>Recibo de Pago</h1>
-                            <form id="formulario">
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" id="nombre" name="nombre" required>
+<!DOCTYPE html>
+<html lang="es">
 
-                                <label for="apellido">Apellido:</label>
-                                <input type="text" id="apellido" name="apellido" required>
-                                <label for="documento">Número de Documento:</label>
-                                <input type="text" id="documento" name="documento" required>
-                                <label for="correo">Correo Electrónico:</label>
-                                <input type="text" id="correo" name="correo" required>
-                                <button type="button" onclick="generarRecibo()">Generar Recibo</button>
-                            </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Cuota de Administración</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="../../assets/css/cuotas.css">
 
-                            <div id="recibo">
-                                <h2>Recibo de Pago</h2>
-                                <p>Nombre: <span id="reciboNombre"></span></p>
-                                <p>Apellido: <span id="reciboApellido"></span></p>
-                                <p>Número de Documento: <span id="reciboDocumento"></span></p>
-                                <p>Correo Electrónico: <span id="reciboCorreo"></span></p>
-                                <button type="button" onclick="realizarPago()">Realizar Pago</button>
+    <link type="image/x-icon" href="../../assets/img/logo.png" rel="icon"> <!-- Ajusta la ruta del logo -->
+
+    <!-- Asegúrate de que la ruta al main.js sea correcta -->
+</head>
+
+<body>
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title">Generar Cuota de Administración</h4>
+                            <div class="col-15">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <button type="button" class="btn btn-primary" onclick="generateQuota()">Generar Cuota</button>
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
                     </div>
-                </div>
-                <!-- end row -->
-
+                </div><!-- end row -->
             </div> <!-- end container-fluid -->
+        </div>
+    </div>
 
-        </div> <!-- end content -->
-        <script src="./assets/js/cuota.js"></script>
+    <!-- Modal -->
+    <div class="modal fade" id="quotaModal" tabindex="-1" aria-labelledby="quotaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quotaModalLabel">Detalles de la Cuota de Administración</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>ID:</strong> <span id="quotaId"></span></p>
+                    <p><strong>FECHA:</strong> <span id="quotaFecha"></span></p>
+                    <p><strong>ESTADO:</strong> <span id="quotaEstado"></span></p>
+                    <p><strong>FECHA_LIMITE:</strong> <span id="quotaFechaLimite"></span></p>
+                    <p><strong>PRECIO:</strong> <span id="quotaPrecio"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asegúrate de que la ruta al main.js sea correcta -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -21,6 +21,4 @@ class UsuariosController {
       require_once('views/informacion/noticias.php');
       require_once('views/components/layout/footer.php');
    }
-     
-    
 }

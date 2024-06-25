@@ -1,11 +1,18 @@
-<link rel="stylesheet" href="./assets/css/principal.css" />
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/css/principal.css" />
+	<title>ADMIRED</title>
+	
+</head>
+<body>
 <section class="banner">
 	<div class="content-banner">
 		<H2>COMODIDADES</H2>
 		<p>PARA TU HOGAR Y DE TU FAMILIA</p>
-		
+		<a href="views\informacion\sobre_nosotros.php">saber más</a>
 	</div>
 </section>
 
@@ -14,16 +21,13 @@
 	<section class="container top-categories">
 		<h1 class="heading-1">ZONAS VERDES</h1>
 		<div class="container-categories">
-			<div><img src="https://www.gentedecanaveral.com/wp-content/uploads/2016/05/DATA_ART_8376696_VERTIL.jpg" alt="" class="card-category category-moca">
+			<div><img src="https://tse4.mm.bing.net/th?id=OIP.oGrAOAh0jdFyafg4MX7KyAAAAA&pid=Api&P=0&h=180" alt="" class="card-category category-moca">
 
 			</div>
 			<div> <img src="https://www.edifito.co/wp-content/uploads/2019/11/oasa.jpg" alt="" class="card-category category-expreso">
 
 			</div>
-			<div> <img src="https://www.edifito.co/wp-content/uploads/2019/11/oasa.jpg" alt="" class="card-category category-expreso">
-
-			</div>
-			<div> <img src="https://www.edifito.co/wp-content/uploads/2019/11/oasa.jpg" alt="" class="card-category category-expreso">
+			<div> <img src="https://www.conservamos.com/images/aseo-en-propiedad-horizontal/servicio-aseo-en-conjuntos-1.jpg" alt="" class="card-category category-expreso">
 
 			</div>
 			
@@ -36,50 +40,39 @@
 			<!-- AREA 1 -->
 			<div class="card-product">
 				<div class="container-img">
-					<img src="https://kshatriyastheclan.files.wordpress.com/2020/05/7-best-gyms.jpg?w=1200" alt="GIMNASIO" />
-				</div>
+				<h2>GYM</h2><br>
+					<img src="assets\img\area_comun2.jpeg" alt="GIMNASIO" />
+				</div><br>
 				<div class="content-card-product">
-					<h3>GYM</h3>
+					<span class="add-cart">
+						<i class="fa-solid fa-dollar-sign"></i>
+					</span>
 					<p class="price">$50.000 <span>$70.000</span></p>
+
 				</div>
 			</div>
 			<!-- AREA 2 -->
 			<div class="card-product">
 				<div class="container-img">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXCJQJyh5dnZshnzGWYkQi3_91-MUSnAl66A&s" alt="PISCINA" />
-				</div>
+				<h3>PISCINA</h3><br>
+					<img src="assets\img\area_comun1.jpeg" alt="PISCINA" />
+				</div><br>
 				<div class="content-card-product">
-					<h3>PISCINA</h3>
+					<span class="add-cart">
+						<i class="fa-solid fa-dollar-sign"></i>
+					</span>
 					<p class="price">$180.000 <span>$200.000</span></p>
 				</div>
 			</div>
 			<!-- AREA 3 -->
 			<div class="card-product">
 				<div class="container-img">
-					<img src="https://st.hzcdn.com/simgs/55d1d8f70b76f91e_4-8397/mediterraneo-patio.jpg" alt="ZONA BBQ" />
-					<div class="button-group">
-						<span>
-							<i class="fa-regular fa-eye"></i>
-						</span>
-						<span>
-							<i class="fa-regular fa-heart"></i>
-						</span>
-						<span>
-							<i class="fa-solid fa-code-compare"></i>
-						</span>
-					</div>
+				<h3>ZONA BBQ</h3><br>
+					<img src="assets\img\area_comun4.jpeg" alt="ZONA BBQ" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-					</div>
-					<h3>ZONA BBQ</h3>
 					<span class="add-cart">
-						<i class="fa-solid fa-basket-shopping"></i>
+						<i class="fa-solid fa-dollar-sign"></i>
 					</span>
 					<p class="title">Para compartir con tu familia y amigos tus momentos felices</p>
 				</div>
@@ -87,39 +80,17 @@
 			<!-- AREA 4 -->
 			<div class="card-product">
 				<div class="container-img">
-					<img src="https://cdn0.matrimonio.com.co/emp/fotos/1/3/1/3/eventos_10_111313.jpg" alt="SALÓN COMUNAL" />
-					<div class="button-group">
-						<span>
-							<i class="fa-regular fa-eye"></i>
-						</span>
-						<span>
-							<i class="fa-regular fa-heart"></i>
-						</span>
-						<span>
-							<i class="fa-solid fa-code-compare"></i>
-						</span>
-					</div>
-				</div>
+				<h3>SALON COMUNAL</h3><br>
+					<img src="assets\img\area_comun3.jpeg" alt="SALÓN COMUNAL" />
+				</div><br>
 				<div class="content-card-product">
-					<div class="stars">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-regular fa-star"></i>
-						<i class="fa-regular fa-star"></i>
-					</div>
-					<h3>SALON COMUNAL</h3>
 					<span class="add-cart">
-						<i class="fa-solid fa-basket-shopping"></i>
+						<i class="fa-solid fa-dollar-sign"></i>
 					</span>
 					<p class="price">$220.000 <span>$250.000</span></p>
 				</div>
 			</div>
 		</div>
-	</section>
-	<h3>SALON COMUNAL</h3>
-	<section class="gallery">
-		<img src="./assets/img/aptop1.jpeg" alt="Gallery Img1" class="gallery-img-1" /><img src="./assets/img/aptop2.jpeg" alt="Gallery Img2" class="gallery-img-2" /><img src="./assets/img/aptop7.jpeg" alt="Gallery Img3" class="gallery-img-3" /><img src="./assets/img/aptop4.jpeg" alt="Gallery Img4" class="gallery-img-4" /><img src="./assets/img/aptop6.jpeg" alt="Gallery Img5" class="gallery-img-5" />
 	</section>
 
 	<section class="container specials">
@@ -130,19 +101,6 @@
 			<div class="card-product">
 				<div class="container-img">
 					<img src="https://www.phenlinea.info/adjunto/Noticias/noticias-03.png" alt="cuotas" />
-
-					<div class="button-group">
-						<span>
-							<i class="fa-regular fa-eye"></i>
-						</span>
-					</div>
-				</div>
-				<div class="stars">
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-regular fa-star"></i>
-					<i class="fa-regular fa-star"></i>
 				</div>
 				<h3>¿Qué hacer si?</h3>
 				<div class="content-card-product">
@@ -153,22 +111,9 @@
 			<div class="card-product">
 				<div class="container-img">
 					<img src="https://www.phenlinea.info/adjunto/Noticias/noticia%203.png" alt="garantias" />
-					<div class="button-group">
-						<span>
-							<i class="fa-regular fa-eye"></i>
-						</span>
-
-					</div>
 				</div>
+				<h3>Garantias por daños</h3>
 				<div class="content-card-product">
-					<div class="stars">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-regular fa-star"></i>
-						<i class="fa-regular fa-star"></i>
-					</div>
-					<h3>Garantias por daños</h3>
 					<p class="text">Garantías por daños en la Propiedad Horizontal Se deben evaluar dos puntos importantes al presentar una garantía por daño: tiempo y tipo de daño en el inmueble.</p>
 				</div>
 			</div>
@@ -176,22 +121,9 @@
 			<div class="card-product">
 				<div class="container-img">
 					<img src="https://www.phenlinea.info/adjunto/Noticias/lol.png" alt="Requerimientos legales" />
-					<div class="button-group">
-						<span>
-							<i class="fa-regular fa-eye"></i>
-						</span>
-
-					</div>
 				</div>
+				<h3>Requerimientos legales</h3>
 				<div class="content-card-product">
-					<div class="stars">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-					</div>
-					<h3>Requerimientos legales</h3>
 					<p class="text">El decreto 2590 del 2009, compilado en el decreto único reglamentario de los sectores de comercio, industria y turismo (1074 del 2015), reguló por primera vez la vivienda turística.</p>
 				</div>
 			</div>
@@ -199,23 +131,9 @@
 			<div class="card-product">
 				<div class="container-img">
 					<img src="https://www.phenlinea.info/adjunto/Noticias/PolizaSeguro.jpg" alt="Poliza" />
-					<div class="button-group">
-						<span>
-							<i class="fa-regular fa-eye"></i>
-						</span>
-
-					</div>
 				</div>
+				<h3>¿Cuál es la mejor poliza?</h3>
 				<div class="content-card-product">
-					<div class="stars">
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-star"></i>
-						<i class="fa-regular fa-star"></i>
-					</div>
-					<h3>¿Cuál es la mejor poliza?</h3>
-
 					<p class="text">Son muchas las deficiencias y graves errores encontrados en las Auditorías de Riesgos y Seguros que se adelantan para Copropiedades y en los Ajustes de Siniestros en la P. H.</p>
 				</div>
 			</div>
@@ -229,14 +147,6 @@
 			<div class="card-blog">
 				<div class="container-img">
 					<img src="https://d3s5pkt10pk3ga.cloudfront.net/resizedImages/original/site/fincaraiz_service/media/listing/65eb39dd-4ef3-42aa-83ff-ee04341d4f26/photos/65eb39dd-4ef3-42aa-83ff-ee04341d4f26_1_True_719de7cf-1d67-4191-99fb-cc8800af41d3.png" alt="Imagen Blog 1" />
-					<div class="button-group-blog">
-						<span>
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</span>
-						<span>
-							<i class="fa-solid fa-link"></i>
-						</span>
-					</div>
 				</div>
 				<div class="content-blog">
 					<h3>APARTAMENTO EN ARRIENDO</h3>
@@ -249,36 +159,20 @@
 			<!-- anuncio 2 -->
 			<div class="card-blog">
 				<div class="container-img">
-					<img src="https://s3.amazonaws.com/imagenesprof.fincaraiz.com.co/OVFR_COL/2021/7/19/2250097_896_12.jpg" alt="Imagen Blog 2" />
-					<div class="button-group-blog">
-						<span>
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</span>
-						<span>
-							<i class="fa-solid fa-link"></i>
-						</span>
-					</div>
+					<img src="https://tse3.mm.bing.net/th?id=OIP.Ikffbz7YLDMF94j_1RSaFwHaEK&pid=Api&P=0&h=180" alt="Imagen Blog 2" />
 				</div>
 				<div class="content-blog">
 					<h3>APARTAMENTO EN VENTA</h3>
 					<span>2 septiembre 2023</span>
 					<p>
-						Cantabria está conformado por 680 unidades de vivienda distribuidas en 6 torres de 17 pisos: 2 de ellas de 8 apartamentos por piso y 4 de 6 apartamentos por piso, con apartamentos desde 72m2 de total de área construida hasta 102m2. Cantabria está ubicado al occidente de Bogotá en un sector privilegiado y de alta valorización, con excelentes facilidades de acceso gracias a su proximidad con las avenidas El Dorado, Ciudad de Cali y Boyacá, la disponibilidad de transporte de todo tipo, incluido Transmilenio, y su cercanía a opciones de entretenimiento como el Centro Comercial Gran Estación, Salitre Plaza, Dorado Plaza y Hayuelos; alternativas de abastecimiento con Home Center y PriceSmart; instituciones de salud como La Clínica Colombia y La Cruz Roja Aeropuerto; y sitios de interés entre los cuales se encuentran el Aeropuerto Internacional El Dorado, Compensar, el Parque Simón Bolívar, Maloka y Salitre Mágico.
-
+						Cantabria está conformado por 680 unidades de vivienda distribuidas en 6 torres de 17 pisos: 2 de ellas de 8 apartamentos por piso y 4 de 6 apartamentos por piso, con apartamentos desde 72m2 de total de área construida hasta 102m2. Cantabria está ubicado al occidente de Bogotá en un sector privilegiado y de alta valorización, con excelentes facilidades de acceso gracias a su proximidad con las avenidas El Dorado, Ciudad de Cali y Boyacá, la disponibilidad de transporte de todo tipo, incluido Transmilenio, y su cercanía a opciones ... <!--de entretenimiento como el Centro Comercial Gran Estación, Salitre Plaza, Dorado Plaza y Hayuelos; alternativas de abastecimiento con Home Center y PriceSmart; instituciones de salud como La Clínica Colombia y La Cruz Roja Aeropuerto; y sitios de interés entre los cuales se encuentran el Aeropuerto Internacional El Dorado, Compensar, el Parque Simón Bolívar, Maloka y Salitre Mágico.
+							--></p>
 				</div>
 			</div>
 			<!--anuncio 3 -->
 			<div class="card-blog">
 				<div class="container-img">
 					<img src="https://s3.amazonaws.com/imagenesprof.fincaraiz.com.co/OVFR_COL/2020/2/18/2146534_466_11.jpg" alt="Imagen Blog 3" />
-					<div class="button-group-blog">
-						<span>
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</span>
-						<span>
-							<i class="fa-solid fa-link"></i>
-						</span>
-					</div>
 				</div>
 				<div class="content-blog">
 					<h3>APARTAMENTO EN VENTA</h3>
@@ -290,3 +184,5 @@
 		</div>
 	</section>
 </main>
+</body>
+</html>
