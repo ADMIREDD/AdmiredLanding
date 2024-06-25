@@ -2,6 +2,7 @@
 
 <div class="content-page">
     <div class="content">
+    <link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
 
         <!-- Start Content-->
         <div class="container-fluid">
@@ -12,12 +13,12 @@
                     <div class="page-title-box">
                         <div class="noticia-container">
                             <div class="imagen-noticia">
-                                <img src="assets\img\img1.jpeg" alt="Imagen de la Noticia" class="imagen">
+                                <img src="assets\img\img1.jpeg" alt="" class="imagen">
                             </div>
                             <div class="noticia-contenido">
                                 <h1 class="noticia-titulo">"Conjunto Residencial 'Admired' Abre sus Puertas a Futuros
                                     Residentes: Apartamentos de Lujo Disponibles Ahora"</h1>
-                                <p class="noticia-fecha">Fecha de Publicación: 18 de Septiembre de 2023</p>
+                                <p class="noticia-fecha">Fecha de Publicación: 18 de junio de 2024</p>
                                 <div class="noticia-cuerpo">
                                     El muy esperado conjunto residencial "Admired" ha anunciado oficialmente la
                                     disponibilidad de sus apartamentos de lujo, marcando un hito emocionante en el

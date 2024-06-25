@@ -4,7 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./assets/css/principal.css" />
+	<link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
+	
 	<title>ADMIRED</title>
+	
 	
 </head>
 <body>
@@ -12,7 +15,6 @@
 	<div class="content-banner">
 		<H2>COMODIDADES</H2>
 		<p>PARA TU HOGAR Y DE TU FAMILIA</p>
-		<a href="views\informacion\sobre_nosotros.php">saber más</a>
 	</div>
 </section>
 
@@ -47,47 +49,47 @@
 					<span class="add-cart">
 						<i class="fa-solid fa-dollar-sign"></i>
 					</span>
-					<p class="price">$50.000 <span>$70.000</span></p>
+					<p class="price">$60.000 <span>$90.000</span></p>
 
 				</div>
 			</div>
 			<!-- AREA 2 -->
 			<div class="card-product">
 				<div class="container-img">
-				<h3>PISCINA</h3><br>
+				<h2>PISCINA</h2><br>
 					<img src="assets\img\area_comun1.jpeg" alt="PISCINA" />
 				</div><br>
 				<div class="content-card-product">
 					<span class="add-cart">
 						<i class="fa-solid fa-dollar-sign"></i>
 					</span>
-					<p class="price">$180.000 <span>$200.000</span></p>
+					<p class="price">$90.000 <span>$130.000</span></p>
 				</div>
 			</div>
 			<!-- AREA 3 -->
 			<div class="card-product">
 				<div class="container-img">
-				<h3>ZONA BBQ</h3><br>
+				<h2>ZONA BBQ</h2><br>
 					<img src="assets\img\area_comun4.jpeg" alt="ZONA BBQ" />
 				</div>
 				<div class="content-card-product">
 					<span class="add-cart">
 						<i class="fa-solid fa-dollar-sign"></i>
 					</span>
-					<p class="title">Para compartir con tu familia y amigos tus momentos felices</p>
+					<p class="price">$80.000 <span>$100.000</span></p>
 				</div>
 			</div>
 			<!-- AREA 4 -->
 			<div class="card-product">
 				<div class="container-img">
-				<h3>SALON COMUNAL</h3><br>
+				<h2>SALON COMUNAL</h2><br>
 					<img src="assets\img\area_comun3.jpeg" alt="SALÓN COMUNAL" />
 				</div><br>
 				<div class="content-card-product">
 					<span class="add-cart">
 						<i class="fa-solid fa-dollar-sign"></i>
 					</span>
-					<p class="price">$220.000 <span>$250.000</span></p>
+					<p class="price">$200.000 <span>$250.000</span></p>
 				</div>
 			</div>
 		</div>
@@ -150,7 +152,7 @@
 				</div>
 				<div class="content-blog">
 					<h3>APARTAMENTO EN ARRIENDO</h3>
-					<span>29 agosto 2023</span>
+					<span>29 agosto 2024</span>
 					<p>
 						Vía al cedro VI es un proyecto inmobiliario CLUB HOUSE en Cedritos, es un edificio Eco- amigable. ULTIMOS apartamentos se entregan con acabados , parqueadero y deposito en AGOSTO 2024!Tenemos apartamentos tipo loft y duplex! • Cuenta con energía solar para iluminación de todas las zonas comunes y parqueaderos. • Posee una planta para el tratamiento de agua lluvia, lo cual significa un ahorro de aproximadamente 30% en la tarifa del servicio de agua para los apartamentos. ROOFTOP VISTA 360 GRADOS/ CLUB HOUSE Financiación: 30% cuota inicial 70% crédito Método de pago: $10.000.000 de separación y 30% cuota inicial diferido en 11 meses
 					</p>

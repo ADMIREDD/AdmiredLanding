@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="./assets/css/principal.css">
 <div class="content-page">
     <div class="content">
+    <link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
 
         <!-- Start Content-->
         <div class="container-fluid">
@@ -17,12 +18,11 @@
                             <p class="title-footer">Información de Contacto</p>
                             <ul>
                                 <p class="informacion">
-                                    Dirección: 71 Pennington Lane Vernon Rockville, CT
-                                    06066
+                                    Dirección: Sena Complejo Sur
                                 </p>
-                                <p class="informacion">Teléfono: 123-456-7890</p>
+                                <p class="informacion">Teléfono: 3183192913</p>
                                 <p class="informacion">Fax: 55555300</p>
-                                <p class="informacion">EmaiL: baristas@support.com</p>
+                                <p class="informacion">EmaiL: joserosellonl@gmail.com</p>
                             </ul>
                         </div>
                     </div>

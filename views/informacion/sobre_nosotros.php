@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/sobre_nosotros.css">
     <title>SOBRE NOSOTROS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
 
 </head>
 <body>

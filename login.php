@@ -55,13 +55,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Ruta al archivo CSS -->
+    <link rel="icon" href="assets\img\favicon.png" type="icon">
+
+    <link rel="stylesheet" href="assets\css\login.css"> <!-- Ruta al archivo CSS -->
+    <img src="assets\img\logo.jpg" alt="Logo" class="logo">
 </head>
 <body>
     <div class="contenedor__todo">
         <div class="caja__trasera">
             <div>
                 <form class="formulario__login" method="POST" action="login.php">
+
                     <div class="login-container">
                         <h2>Iniciar sesión</h2>
                         <?php if (!empty($error)): ?>
@@ -69,13 +73,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php endif; ?>
                         <div class="form-group">
                             <label for="email">Correo electrónico:</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required value>
                         </div>
                         <div class="form-group">
                             <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="password" required>
+                            <input type="password" id="password" name="password" required autocomplete>
+                            <label class="label-checkbox">
+                                <input type="checkbox" name="remember" checked="checked">
+                                "guardar datos en este equipo"
+                            </label>
                         </div>
-                        <button type="submit">Iniciar sesión</button>
+                        <button type="button" onclick="window.history.back();">Volver</button>
+                        <button type="submit">Ingresar</button>
                     </div>
                 </form>
             </div>
