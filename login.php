@@ -28,12 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         $hashedPassword = $row['CONTRASENA'];
+        $cuotasAdministracionId = $row['CUOTAS_ADMIN_ID'];
 
         // Verificar la contraseña utilizando password_verify
         if (password_verify($password, $hashedPassword)) {
             // Usuario autenticado correctamente
             $_SESSION['loggedin'] = true;
-            $_SESSION['email'] = $email;
+           
+            $_SESSION['email'] = $email; 
+            $_SESSION['cuotasAdministracionId'] = $cuotasAdministracionId;
             header("Location: headd.php"); // Redirigir a la página de headd.php
             exit;
         } else {

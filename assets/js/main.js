@@ -1,25 +1,46 @@
-function generateQuota() {
-    const formdata = new FormData();
-    formdata.append("FECHA", "2024-08-05");
-    formdata.append("ESTADO", "pendiente");
-    formdata.append("FECHA_LIMITE", "2024-10-05");
-    formdata.append("PRECIO", "50000");
+function generateQuote(id) {
 
-    fetch('http://localhost:8080/api/cuotas_administracion/create', {
-        method: 'POST',
-       
-        body: formdata // El cuerpo de la solicitud
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+    fetch(`http://localhost:8080/api/cuotas_administracion/show/${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
         }
-        return response.json();
     })
+    .then(response => response.json())
     .then(data => {
-        console.log('Success:', data);
+        document.getElementById('quoteResult').innerText = JSON.stringify(data);
     })
-    .catch((error) => {
+    .catch(error => {
         console.error('Error:', error);
     });
-}    
+};
+
+document.getElementById('pqrForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    fetch('http://localhost:8080/api/create', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('pqrResult').innerText = 'PQR creada exitosamente';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+
+
+
+  

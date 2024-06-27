@@ -42,4 +42,10 @@ class CuotaController extends ResourceController
             return $this->failServerError('An unexpected error occurred');
         }
     }
+
+    function getByUserId($id){
+
+    }
+
 }
+

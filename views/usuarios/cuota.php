@@ -28,7 +28,10 @@
                             <div class="col-15">
                                 <div class="card">
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary" onclick="generateQuota()">Generar Cuota</button>
+                                        <button type="button" class="btn btn-primary" onclick="generateQuote(9)">Generar Cuota</button>
+                                    <?php  die($_SESSION['email']) ?>
+                            <div id="quoteResult"></div>
+
                                     </div>
                                 </div>
                             </div>

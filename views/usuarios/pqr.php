@@ -1,33 +1,46 @@
-<?php
-// Conectar a la base de datos (ajusta los detalles según tu configuración)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "base_proyecto";
+<!DOCTYPE html>
+<html lang="es">
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/pqr.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Cuota de Administración</title>
+</head>
 
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+<body>
+    <div class="content-page">
+        <div class="content">
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="containerr">
+                                <h1 class="page-title">Peticiones, quejas y reclamos</h1>
+                                <form id="formulario" action="pqr.php" method="POST">
+                                <form id="pqrForm">
+    <input type="text" name="name" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Mensaje" required></textarea>
+    <button type="submit">Enviar PQR</button>
+</form>
+<div id="pqrResult"></div>
+                                    <a href="" class="button">Enviar</a>
+                                    <button type="button" onclick="window.history.back();"
+                                        class="styled-button">Volver</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div> <!-- end container-fluid -->
+            </div> <!-- end content -->
+        </div>
+    </div>
+    <script src="./assets/js/cuota.js"></script>
+</body>
 
-// Recibir datos del formulario
-$tipo = $_POST['tipo'];
-// No hay necesidad de recibir 'nombre', 'email', 'mensaje' si no existen en la tabla
-// Se asume que estos datos no se están utilizando en la inserción a la tabla 'pqr'
-
-
-
-// Preparar la consulta SQL para insertar datos
-$sql = "INSERT INTO pqr (tipo,)
-        VALUES ('$tipo')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Registro exitoso";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-?>
+</html>

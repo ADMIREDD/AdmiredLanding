@@ -1,13 +1,29 @@
-body {
-    background-color: rgb(0, 0, 0);
-  }
-  
-  .gallery {
-    padding: 20px;
-  }
-  .gallery-title {
-    color: rgb(106, 105, 105);
-    text-align: center;
-    font-size: 50px;
-    font-family: fantasy;
-  }
+.card-product {
+  width: 300px; 
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  overflow: hidden;
+}
+.card-product .container-img img {
+  width: 100%; 
+  height: 200px;
+  object-fit: cover; 
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center; 
+  justify-content: center;
+  width: 70px; 
+  height: 60px; 
+  background-color: rgb(30, 211, 30); 
+  border-radius: 30%; 
+  text-decoration: none; 
+  margin: 10px; 
+}
+
+.whatsapp-button i {
+  color: white; 
+  font-size: 40px; 
+}

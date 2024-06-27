@@ -1,52 +1,105 @@
-form {
-    width: 450px;
-    margin: auto;
-    background: rgba(0, 0, 0, 0,4);
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin-top: 20px;
-    border-radius: 7px;
-}
-
-h3 {
-    color: #000;
-    text-align: center;
+/* Reset de márgenes y paddings */
+* {
     margin: 0;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-input, textarea {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 7px;
+    padding: 0;
     box-sizing: border-box;
-    font-size: 17px;
-    bottom: none;
 }
 
-textarea {
-    background-color: #ffffff;
-    color: #ffffff;
+/* Estilo general del body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.content-page {
+    background-image:url(https://www.conservamos.com/images/aseo-en-propiedad-horizontal/servicio-aseo-en-conjuntos-1.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor del contenido */
+.content {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.6);
     padding: 20px;
+    box-shadow: 0 0 10px rgba(17, 0, 255, 0.6);
+    border-radius: 10px;
 }
 
-#boton{
-    background: #0059fe;
-    color: #000;
-    padding: 20px;
+/* Título de la página */
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-align: center;
 }
 
-#boton:hover{
-    cursor: pointer;
+/* Contenedor del formulario */
+.containerr {
+    display: flex;
+    flex-direction: column;
 }
-.col-12{
-    background-image: url(../img/bg4.jpg);
+
+/* Estilo del formulario */
+form {
+    display: flex;
+    flex-direction: column;
 }
-.tex{
-    background-color: #9098a0;
+
+form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
 }
-.volver{
+
+form input[type="text"],
+form input[list] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form datalist {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Botones */
+.button,
+.styled-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
     text-decoration: none;
-    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover,
+.styled-button:hover {
+    background-color: #0056b3;
+}
+
+.styled-button {
+    background-color: #6c757d;
+}
+
+.styled-button:hover {
+    background-color: #5a6268;
 }
