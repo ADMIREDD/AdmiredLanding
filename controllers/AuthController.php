@@ -32,6 +32,8 @@ class AuthController {
                 $row = $result->fetch_assoc();
                 $hashedPassword = $row['CONTRASENA'];
                 $cuotasAdminId = $row['CUOTAS_ADMIN_ID'];
+                $userId = $row['ID'];
+                $docNumber = $row['NO_DOCUMENTO'];
 
                 // Verificar la contraseña utilizando password_verify
                 if (password_verify($password, $hashedPassword)) {
@@ -39,6 +41,8 @@ class AuthController {
                     $_SESSION['loggedin'] = true;
                     $_SESSION['email'] = $email;
                     $_SESSION['cuotasAdminId'] = $cuotasAdminId;
+                    $_SESSION['userId'] = $userId;
+                    $_SESSION['docNumber'] = $docNumber;
                     header("Location: ?c=usuarios&m=cuota"); // Redirigir a la página de menú
                     exit;
                 } else {

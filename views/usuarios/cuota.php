@@ -16,9 +16,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Estilos generales -->
-    <link rel="stylesheet" href="../../assets/css/cuotas.css">
+    <link rel="stylesheet" href="assets/css/cuotas.css">
 
-    <link type="image/x-icon" href="../../assets/img/logo.png" rel="icon"> <!-- Ajusta la ruta del logo -->
+    <link type="image/x-icon" href="assets/img/logo.png" rel="icon"> <!-- Ajusta la ruta del logo -->
 
     <!-- Asegúrate de que la ruta al main.js sea correcta -->
 </head>
@@ -34,9 +34,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                             <div class="col-15">
                                 <div class="card">
                                     <div class="card-body">
-                                        
-                                        <button type="button" class="btn btn-primary" onclick="generateQuote(<?php echo $_SESSION['cuotasAdminId']; ?>)">Generar Cuota</button>
-                            <div id="quoteResult"></div>
+
+                                        <button type="button" class="btn btn-primary" onclick="generateQuote(<?php echo $_SESSION['cuotasAdminId']; ?>, <?php echo $_SESSION['docNumber'] ?>)">Generar Cuota</button>
+                                        <div id="result"></div>
 
                                     </div>
                                 </div>
@@ -47,9 +47,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div> <!-- end container-fluid -->
         </div>
     </div>
-
     <!-- Modal -->
-    <div class="modal fade" id="quotaModal" tabindex="-1" aria-labelledby="quotaModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="quotaModal" tabindex="1" aria-labelledby="quotaModalLabel" aria-hidden="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -68,7 +67,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Asegúrate de que la ruta al main.js sea correcta -->
     <script src="../../assets/js/main.js"></script>
