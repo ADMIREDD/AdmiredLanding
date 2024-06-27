@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: index.php"); // Redirigir al inicio de sesión si no está autenticado
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,7 +34,8 @@
                             <div class="col-15">
                                 <div class="card">
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary" onclick="generateQuote(9)">Generar Cuota</button>
+                                        
+                                        <button type="button" class="btn btn-primary" onclick="generateQuote(<?php echo $_SESSION['cuotasAdminId']; ?>)">Generar Cuota</button>
                             <div id="quoteResult"></div>
 
                                     </div>
