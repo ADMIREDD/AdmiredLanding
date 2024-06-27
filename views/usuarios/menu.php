@@ -35,10 +35,10 @@
 			<nav class="navbar container">
 				<i class="fa-solid fa-bars"></i>
 				<ul class="menu">
-					<li><a href="views/usuarios/cuota.php">Cuota de Administración</a></li>
+					<li><a href="?c=usuarios&m=cuota">Cuota de Administración</a></li>
 					
-					<li><a href="views/usuarios/pqr.php">Pqr</a></li>
-					<a href="logout.php">Cerrar sesión</a> 
+					<li><a href="?c=usuarios&m=pqr">Pqr</a></li>
+					<a href="?c=auth&m=logout">Cerrar sesión</a> 
 				</ul>
 			</nav>
 		</div>

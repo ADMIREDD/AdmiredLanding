@@ -42,10 +42,8 @@ session_start();
 					<li><a href="?c=informacion&m=noticias">Noticias</a></li>
 					<li><a href="?c=informacion&m=contactanos">Contactanos</a></li>
 					<li><a href="?c=informacion&m=galeria">Reservas</a></li>
-					<li><a href="login.php">Iniciar Sesión</a></li>
+					<li><a href="?c=auth&m=show">Iniciar Sesión</a></li>
 				</ul>
-
-				
 			</nav>
 		</div>
 	</header>
