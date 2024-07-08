@@ -13,11 +13,15 @@ function generateQuote(id, docNumber) {
       console.log(cuote)
       result.innerHTML = `
         <h1>ID</h1> <p>${cuote.ID}</p> 
-        <h1>FECHA</h1> <p>${new Date(cuote.FECHA).toLocaleDateString('es-Co')} </p>
         <h1>NUMERO DOCUMENTO</h1> <p> ${docNumber} </p>
+        <h1>FECHA</h1> <p>${new Date(cuote.FECHA).toLocaleDateString('es-Co')} </p>
+        
         <h1>FECHA LIMITE</h1> <p> ${new Date(cuote.FECHA_LIMITE).toLocaleDateString('es-Co')} </p> 
         <h1>PRECIO</h1> <p> $${cuote.PRECIO} </p> </br>
-      `
+       <button type="button" class="btn btn-secondary mt-3" onclick="printContent()">Imprimir Cuota</button>
+      `;
+      
+      
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -48,3 +52,4 @@ function createPQR(userId) {
       console.error("Error:", error);
     });
 }
+

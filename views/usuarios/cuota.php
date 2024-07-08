@@ -37,6 +37,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
                                         <button type="button" class="btn btn-primary" onclick="generateQuote(<?php echo $_SESSION['cuotasAdminId']; ?>, <?php echo $_SESSION['docNumber'] ?>)">Generar Cuota</button>
                                         <div id="result"></div>
+                                        
 
                                     </div>
                                 </div>
@@ -47,31 +48,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div> <!-- end container-fluid -->
         </div>
     </div>
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="quotaModal" tabindex="1" aria-labelledby="quotaModalLabel" aria-hidden="false">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="quotaModalLabel">Detalles de la Cuota de Administración</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>ID:</strong> <span id="quotaId"></span></p>
-                    <p><strong>FECHA:</strong> <span id="quotaFecha"></span></p>
-                    <p><strong>ESTADO:</strong> <span id="quotaEstado"></span></p>
-                    <p><strong>FECHA_LIMITE:</strong> <span id="quotaFechaLimite"></span></p>
-                    <p><strong>PRECIO:</strong> <span id="quotaPrecio"></span></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    
 
     <!-- Asegúrate de que la ruta al main.js sea correcta -->
     <script src="../../assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function printContent() {
+            window.print();
+        }
+    </script>
 
 </body>
 

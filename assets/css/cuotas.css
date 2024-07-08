@@ -1,104 +1,76 @@
-/* Estilos generales */
+/* General styles */
 body {
-    background-color: #f4f7f6;
+    background-color: #f8f9fa;
     color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Page title */
 .page-title-box {
+    margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .page-title {
-    margin: 0;
     font-size: 24px;
+    font-weight: bold;
 }
 
-.content {
-    margin: 20px;
-}
-
+/* Card styles */
 .card {
-    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 600px;
 }
 
+.card-body {
+    padding: 20px;
+}
+
+/* Button styles */
 .btn-primary {
     background-color: #007bff;
-    color: #fff;
+    border-color: #007bff;
+    border-radius: 5px;
 }
 
 .btn-primary:hover {
     background-color: #0056b3;
+    border-color: #004085;
 }
 
-.modal-body p {
-    margin-bottom: 10px;
-}
-
-.modal-title {
-    color: #333;
-}
-
-/* Estilos para el modal */
-.modal-content {
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.modal-footer {
-    border-top: none;
-    padding-top: 10px;
-}
-
-/* Estilos para el formulario (si lo necesitas) */
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-form h1 {
-    text-align: center;
-    color: #000000;
-}
-
-form label {
-    display: block;
-    margin-bottom: 10px;
-    color: #000000;
-}
-
-form input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-}
-
-form button:hover {
-    background-color: #0056b3;
-}
-
-#recibo {
-    display: none;
-    border: 1px solid #ccc;
-    padding: 10px;
+/* Result div styles */
+#result {
     margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #28a745;
 }
+
+/* Container styles */
+.container-fluid {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+/* Content page styles */
+.content-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    width: 100%;
+    max-width: 800px;
+}
+
