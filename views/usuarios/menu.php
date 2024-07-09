@@ -15,7 +15,7 @@
 		<div class="container-hero">
 			<div class="container hero">
 				<div class="customer-support">
-					<i class="fa-solid fa-headset"></i>
+					
 					<div class="content-customer-support">
 					<img src="assets/img/admired.png" alt="" width="100px">
 					</div>
