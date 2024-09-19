@@ -6,7 +6,8 @@
 		<!-- AREA 1 -->
 		<div class="card-product">
 			<div class="container-img">
-				<img src="https://kshatriyastheclan.files.wordpress.com/2020/05/7-best-gyms.jpg?w=1200" alt="GIMNASIO" />
+				<img src="https://kshatriyastheclan.files.wordpress.com/2020/05/7-best-gyms.jpg?w=1200"
+					alt="GIMNASIO" />
 				<div class="button-group">
 					<span>
 						<i class="fa-regular fa-eye"></i>
@@ -38,7 +39,8 @@
 		<!-- AREA 2 -->
 		<div class="card-product">
 			<div class="container-img">
-				<img src="https://www.dimensionvertical.com/images/NOTICIAS_2020/piscinas-en-copropiedades-1.jpg" alt="PISCINA" />
+				<img src="https://www.dimensionvertical.com/images/NOTICIAS_2020/piscinas-en-copropiedades-1.jpg"
+					alt="PISCINA" />
 				<div class="button-group">
 					<span>
 						<i class="fa-regular fa-eye"></i>
@@ -63,7 +65,7 @@
 				<span class="add-cart">
 					<i class="fa-solid fa-basket-shopping"></i>
 				</span>
-				<p class="price">$180.000 <span>$200.000</span></p>
+				<p class="price">$180.000 <span></span></p>
 			</div>
 		</div>
 		<!-- AREA 3 -->
@@ -125,7 +127,7 @@
 				<span class="add-cart">
 					<i class="fa-solid fa-basket-shopping"></i>
 				</span>
-				<p class="price">$220.000 <span>$250.000</span></p>
+				<p class="price">$220.000 <span>.000</span></p>
 			</div>
 		</div>
 	</div>
@@ -136,7 +138,8 @@
 		<!-- AREA 1 -->
 		<div class="card-product">
 			<div class="container-img">
-				<img src="https://i0.wp.com/presidenteicguadalajara.com/wp-content/uploads/2022/12/terraza-eventos-guadalajara-presidente.jpg?fit=785%2C605&ssl=1" alt="GIMNASIO" />
+				<img src="https://i0.wp.com/presidenteicguadalajara.com/wp-content/uploads/2022/12/terraza-eventos-guadalajara-presidente.jpg?fit=785%2C605&ssl=1"
+					alt="GIMNASIO" />
 				<div class="button-group">
 					<span>
 						<i class="fa-regular fa-eye"></i>
@@ -168,7 +171,8 @@
 		<!-- AREA 2 -->
 		<div class="card-product">
 			<div class="container-img">
-				<img src="https://www.dimensionvertical.com/images/NOTICIAS_2020/piscinas-en-copropiedades-1.jpg" alt="PISCINA" />
+				<img src="https://www.dimensionvertical.com/images/NOTICIAS_2020/piscinas-en-copropiedades-1.jpg"
+					alt="PISCINA" />
 				<div class="button-group">
 					<span>
 						<i class="fa-regular fa-eye"></i>
