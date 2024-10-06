@@ -30,7 +30,7 @@
                         <i class="fa-solid fa-dollar-sign"></i>
                         <p class="price">$60.000 <span>$90.000</span></p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
+                    <li><a href="" class="btn-option5">Reservar</a></li>
                 </div>
             </div>
             <!-- AREA 2 -->
@@ -44,7 +44,7 @@
                         <i class="fa-solid fa-dollar-sign"></i>
                         <p class="price">$90.000 <span>$130.000</span></p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
+                    <li><a href="" class="btn-option5">Reservar</a></li>
                 </div>
             </div>
             <!-- AREA 3 -->
@@ -58,7 +58,7 @@
                         <i class="fa-solid fa-dollar-sign"></i>
                         <p class="price">$80.000 <span>$100.000</span></p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
+                    <li><a href="" class="btn-option5">Reservar</a></li>
                 </div>
             </div>
             <!-- AREA 4 -->
@@ -72,7 +72,7 @@
                         <i class="fa-solid fa-dollar-sign"></i>
                         <p class="price">$200.000 <span>$250.000</span></p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
+                    <li><a href="" class="btn-option5">Reservar</a></li>
                 </div>
             </div>
         </div>

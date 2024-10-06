@@ -2,7 +2,7 @@
 
 <div class="content-page">
     <div class="content">
-    <link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
+        <link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
 
         <!-- Start Content-->
         <div class="container-fluid">
