@@ -36,7 +36,7 @@
 				<i class="fa-solid fa-bars"></i>
 				<ul class="menu">
 					<li><a href="?c=usuarios&m=cuota">Cuota de Administración</a></li>
-					<li><a href="?c=informacion&m=galeria">Reservas</a></li>
+					<li><a href="?c=galeria&m=galeria">Reservas</a></li>
 					<li><a href="?c=usuarios&m=pqr">Pqr</a></li>
 					<a href="?c=auth&m=logout">Cerrar sesión</a>
 				</ul>
