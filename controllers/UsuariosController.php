@@ -16,17 +16,5 @@ class UsuariosController
       require_once('views/components/layout/footer.php');
    }
 
-   public function reservas()
-   {
-      require_once('views/components/layout/head.php');
-      require_once('views/informacion/reservas.php');
-      require_once('views/components/layout/footer.php');
-   }
-   public function galeria()
-   {
-      require_once('views/usuarios/layout/head.php');
-      require_once('views/usuarios/galeria.php');
-      require_once('views/components/layout/footer.php');
-   }
 
 }
