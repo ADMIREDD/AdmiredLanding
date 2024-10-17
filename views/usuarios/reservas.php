@@ -3,38 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Áreas Comunes</title>
+    <link rel="stylesheet" href="./assets/css/principal.css">
+    <link rel="stylesheet" href="./assets/css/galeria.css">
+    <link rel="stylesheet" href="./assets/css/reservas.css">
 
-    <link rel="stylesheet" href="assets/css/areas_comunes.css">
+    <link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
 
 </head>
 
 <body>
-
-    <div class="container-fluid">
+    <div class="container-fluid form-wrapper">
         <div class="container-show-1">
-            <h1 class="page-title">ÁREA COMÚN</h1>
-            <form id="formulario">
+            <!-- Aquí se muestra el título del área correspondiente -->
+            <h1>Estas reservando el área de <?php echo $titulo; ?></h1>
+            <h3> El área solo se podrá reservar máximo 4 horas.</h3>
+            <form id="formulario" method="POST" action="ruta-del-controlador">
                 <div class="form-container">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-
+                    <label for="fecha-hora-inicio">FECHA DE RESERVA:</label>
+                    <input type="datetime-local" id="fecha-hora-inicio" name="fecha-hora-inicio" required>
+                    <label for="fecha-hora-fin">FECHA FIN:</label>
+                    <input type="datetime-local" id="fecha-hora-fin" name="fecha-hora-fin" required>
                     <button type="button" onclick="window.history.back();" class="styled-button">Volver</button>
                     <button type="submit" class="button">Reservar</button>
                 </div>

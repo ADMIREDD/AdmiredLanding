@@ -2,12 +2,15 @@
 session_start();
 require_once('config.php');
 
-class AuthController {
-    public function show() {
+class AuthController
+{
+    public function show()
+    {
         require_once('views/auth/login_form.php');
     }
 
-    public function login() {
+    public function login()
+    {
         $error = '';
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email = $_POST['email'];
@@ -22,7 +25,7 @@ class AuthController {
             }
 
             // Consulta para obtener la contraseña encriptada del usuario
-            $sql = "SELECT * FROM usuarios WHERE EMAIL = ?";
+            $sql = "SELECT * FROM users WHERE email = ?";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("s", $email);
             $stmt->execute();
@@ -30,7 +33,7 @@ class AuthController {
 
             if ($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
-                $hashedPassword = $row['CONTRASENA'];
+                $hashedPassword = $row['password'];
                 $cuotasAdminId = $row['CUOTAS_ADMIN_ID'];
                 $userId = $row['ID'];
                 $docNumber = $row['NO_DOCUMENTO'];
@@ -61,7 +64,8 @@ class AuthController {
         require_once('views/auth/login_form.php');
     }
 
-    public function logout() {
+    public function logout()
+    {
         // Cerrar sesión
         $_SESSION = array();
         session_destroy();
@@ -69,4 +73,4 @@ class AuthController {
         exit;
     }
 }
-?>
+

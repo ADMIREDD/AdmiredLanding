@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de Áreas Comunes</title>
-    <link rel="stylesheet" href="./assets/css/principal.css">
+    <link rel="stylesheet" href="./assets/css/reseras.css">
     <link rel="stylesheet" href="./assets/css/galeria.css">
-    <link rel="stylesheet" href="./assets/css/reservas.css">
-    <link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
+
 
 </head>
 
@@ -26,7 +25,9 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <p class="price">$60.000 <span>$90.000</span></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=gym" class="btn-option5">Reservar</a></li>
+
+
             </div>
         </div>
         <!-- AREA 2 -->
@@ -40,7 +41,7 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <p class="price">$90.000 <span>$130.000</span></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=piscina" class="btn-option5">Reservar</a></li>
             </div>
         </div>
         <!-- AREA 3 -->
@@ -54,7 +55,7 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <p class="price">$80.000 <span>$100.000</span></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=bbq" class="btn-option5">Reservar</a></li>
             </div>
         </div>
         <!-- AREA 4 -->
@@ -68,7 +69,7 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <p class="price">$200.000 <span>$250.000</span></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=salon_comunal" class="btn-option5">Reservar</a></li>
             </div>
         </div>
     </div>
@@ -84,7 +85,7 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <p class="price">$60.000 <span>$90.000</span></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=terraza_eventos" class="btn-option5">Reservar</a></li>
             </div>
         </div>
         <!-- AREA 2 -->
@@ -98,7 +99,7 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <p class="price">$90.000 <span>$130.000</span></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=cancha_futbol" class="btn-option5">Reservar</a></li>
             </div>
         </div>
         <!-- AREA 3 -->
@@ -112,7 +113,7 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <p class="price">$80.000 <span>$100.000</span></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=salon_juegos" class="btn-option5">Reservar</a></li>
             </div>
         </div>
         <!-- AREA 4 -->
@@ -126,7 +127,7 @@
                     <i class="fa-solid fa-dollar-sign"></i>
                     <p class="price">$200.000 <span>$250.000</span></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=salon_infantil" class="btn-option5">Reservar</a></li>
             </div>
         </div>
     </div>
