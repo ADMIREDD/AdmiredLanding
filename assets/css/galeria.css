@@ -1,39 +1,62 @@
-.container-products {
+.btn-option5 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px #1e7e34;
+}
+
+.btn-option5:active {
+  box-shadow: 0 2px #1e7e34;
+  transform: translateY(2px);
+}
+
+.btn-option5:hover {
+  background-color: #0056b3;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.container-row {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  /* Ajusta este valor para controlar el ancho total de los contenedores */
-  margin-bottom: 30px;
-  /* Espacio entre las filas */
+label {
+  margin-top: 10px;
+  color: #555;
 }
 
-.card-product {
-  flex: 0 1 calc(50% - 10px);
-  /* Tamaño flexible con espacio entre cartas */
-  box-sizing: border-box;
+input,
+textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.reservar-btn {
-  background-color: #4CAF50;
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #28a745;
   color: white;
   border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
 }
 
-.reservar-btn:hover {
-  background-color: #45a049;
+button:hover {
+  background-color: #218838;
 }

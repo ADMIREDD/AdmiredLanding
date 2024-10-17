@@ -1,21 +1,17 @@
 <!-- views/auth/login_form.php -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Iniciar sesión</title>
     <link rel="icon" href="assets\img\favicon.png" type="icon">
     <link rel="stylesheet" href="assets\css\login.css"> <!-- Ruta al archivo CSS -->
-    <style>
-        .logo {
-            width: 100px; /* Tamaño de la imagen del logo */
-            height: 100px; /* Tamaño de la imagen del logo */
-        }
-        .error-message {
-            color: red;
-        }
-    </style>
+
+
+
 </head>
+
 <body>
     <div class="contenedor__todo">
         <div class="caja__trasera">
@@ -33,7 +29,8 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="password" required autocomplete="current-password">
+                            <input type="password" id="password" name="password" required
+                                autocomplete="current-password">
                             <label class="label-checkbox">
                                 <input type="checkbox" name="remember" checked="checked">
                                 "guardar datos en este equipo"
@@ -47,4 +44,5 @@
         </div>
     </div>
 </body>
+
 </html>
