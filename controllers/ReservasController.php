@@ -13,6 +13,7 @@ class ReservasController
 {
     public function reservas()
     {
+        session_start();
         $area = isset($_GET['area']) ? $_GET['area'] : '';
 
         // Conectar a la base de datos
@@ -21,11 +22,9 @@ class ReservasController
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        // Modificar el nombre del área para evitar problemas de mayúsculas/minúsculas o caracteres especiales
         $areaFormatted = str_replace('_', ' ', ucwords($area));
 
-        // Consultar el área común en la base de datos (ignorar mayúsculas y minúsculas)
-        $sql = "SELECT ID, NOMBRE FROM areas_comunes WHERE LOWER(NOMBRE) = LOWER(?)";
+        $sql = "SELECT ID, NOMBRE, PRECIO FROM areas_comunes WHERE LOWER(NOMBRE) = LOWER(?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $areaFormatted);
         $stmt->execute();
@@ -35,14 +34,11 @@ class ReservasController
             $areaData = $result->fetch_assoc();
             $titulo = $areaData['NOMBRE'];
             $areaId = $areaData['ID'];
+            $valorReserva = $areaData['PRECIO'];
         } else {
-            echo "<script>
-            alert('El área seleccionada no existe. Por favor, selecciona una área válida.');
-            window.location.href = '?c=galeria&m=index';
-        </script>";
-            $stmt->close();
-            $conn->close();
-            return;
+            // Redirigir a galería si el área no existe
+            header("Location: ?c=galeria&m=galeria");
+            exit;
         }
 
         $stmt->close();
@@ -53,13 +49,12 @@ class ReservasController
         require_once('views/components/layout/footer.php');
     }
 
-
     public function crearReserva()
     {
         session_start();
 
         if (!isset($_SESSION['userId'])) {
-            header("Location: index.php");
+            header("Location: ?c=galeria&m=galeria");
             exit;
         }
 
@@ -68,65 +63,61 @@ class ReservasController
         $fechaFin = $_POST['fecha-hora-fin'];
         $areaId = $_POST['area_id'];
 
-        // Conectar a la base de datos
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($conn->connect_error) {
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        // Verificar si el área existe en la base de datos
+        // Obtener el precio del área común
         $sql = "SELECT PRECIO FROM areas_comunes WHERE ID = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $areaId);
         $stmt->execute();
         $result = $stmt->get_result();
-
-        if ($result->num_rows == 0) {
-            echo "<script>
-                alert('El área seleccionada no existe. Por favor, selecciona una área válida.');
-                window.location.href = '?c=reservas&m=reservas';
-            </script>";
-            $stmt->close();
-            $conn->close();
-            return;
-        }
-
-        $valorReserva = $result->fetch_assoc()['PRECIO'];
+        $valorReserva = ($result->num_rows == 1) ? $result->fetch_assoc()['PRECIO'] : 0.00;
         $stmt->close();
 
-        // Insertar reserva en la base de datos
+        // Comprobar si ya existe una reserva en el mismo área y horario
+        $sql = "SELECT 1 FROM reservas WHERE ID_AREA_COMUN = ? AND 
+                ((? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR (? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR
+                (FECHA_RESERVA BETWEEN ? AND ?) OR (FECHA_FIN BETWEEN ? AND ?))";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("issssss", $areaId, $fechaInicio, $fechaFin, $fechaInicio, $fechaFin, $fechaInicio, $fechaFin);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $_SESSION['reservationMessage'] = "El área seleccionada ya está reservada en el horario seleccionado. Por favor, elige otro horario.";
+            $stmt->close();
+            $conn->close();
+            header("Location: ?c=reservas&m=reservas&area=" . urlencode($areaId) . "&created=false");
+            exit;
+        }
+        $stmt->close();
+
+        // Crear la reserva si no hay conflicto
         $sql = "INSERT INTO reservas (FECHA_RESERVA, FECHA_FIN, ID_AREA_COMUN, ID_USUARIO, VALOR, ID_ESTADO_RESERVA) 
-                VALUES (?, ?, ?, ?, ?, 1)"; // Estado "Pendiente"
+                VALUES (?, ?, ?, ?, ?, 1)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssiid", $fechaInicio, $fechaFin, $areaId, $userId, $valorReserva);
 
         if ($stmt->execute()) {
             $this->enviarCorreoReserva($userId, $areaId, $fechaInicio, $fechaFin, $valorReserva);
-            echo "<div id='successMessage' style='
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-    z-index: 1000;
-    font-size: 16px;
-'>Reserva creada con éxito. Se envió la información de la reserva al correo y pronto será confirmada.</div>
-<script>
-    setTimeout(function() {
-        document.getElementById('successMessage').style.display = 'none';
-        window.location.href = '?c=galeria&m=galeria'; // Cambiado para redirigir a la galería
-    }, 8000);
-</script>";
+            $_SESSION['reservationMessage'] = "Reserva creada con éxito. Se envió la información de la reserva al correo y pronto será confirmada.";
+            header("Location: ?c=reservas&m=reservas&area=" . urlencode($areaId) . "&created=true");
+        } else {
+            $_SESSION['reservationMessage'] = "Error al crear la reserva. Por favor, intente nuevamente.";
+            header("Location: ?c=reservas&m=reservas&area=" . urlencode($areaId) . "&created=false");
         }
 
         $stmt->close();
         $conn->close();
+        exit;
     }
+
+
+
+
 
 
     private function enviarCorreoReserva($userId, $areaId, $fechaInicio, $fechaFin, $valorReserva, $observacionEntrega = null, $observacionRecibe = null, $estadoReservaId = 1)
