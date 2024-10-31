@@ -16,6 +16,10 @@ class ReservasController
         session_start();
         $area = isset($_GET['area']) ? $_GET['area'] : '';
 
+        // Verificamos si hay un mensaje o estado de creación en la URL
+        $created = isset($_GET['created']) ? $_GET['created'] : null;
+        $message = isset($_GET['message']) ? $_GET['message'] : null;
+
         // Conectar a la base de datos
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($conn->connect_error) {
@@ -44,10 +48,12 @@ class ReservasController
         $stmt->close();
         $conn->close();
 
+        // Pasar los datos a la vista
         require_once('views/usuarios/menu.php');
         require_once('views/usuarios/reservas.php');
         require_once('views/components/layout/footer.php');
     }
+
 
     public function crearReserva()
     {
@@ -69,51 +75,67 @@ class ReservasController
         }
 
         // Obtener el precio del área común
-        $sql = "SELECT PRECIO FROM areas_comunes WHERE ID = ?";
+        $sql = "SELECT PRECIO, NOMBRE FROM areas_comunes WHERE ID = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $areaId);
         $stmt->execute();
         $result = $stmt->get_result();
-        $valorReserva = ($result->num_rows == 1) ? $result->fetch_assoc()['PRECIO'] : 0.00;
+        $areaData = $result->fetch_assoc();
+        $valorReserva = $areaData['PRECIO'] ?? 0.00;
+        $titulo = $areaData['NOMBRE'] ?? 'Área Desconocida';
         $stmt->close();
 
         // Comprobar si ya existe una reserva en el mismo área y horario
         $sql = "SELECT 1 FROM reservas WHERE ID_AREA_COMUN = ? AND 
-                ((? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR (? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR
-                (FECHA_RESERVA BETWEEN ? AND ?) OR (FECHA_FIN BETWEEN ? AND ?))";
+            ((? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR (? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR
+            (FECHA_RESERVA BETWEEN ? AND ?) OR (FECHA_FIN BETWEEN ? AND ?))";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("issssss", $areaId, $fechaInicio, $fechaFin, $fechaInicio, $fechaFin, $fechaInicio, $fechaFin);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
+            // Si hay conflicto, mostrar el mensaje directamente en reservas.php
             $_SESSION['reservationMessage'] = "El área seleccionada ya está reservada en el horario seleccionado. Por favor, elige otro horario.";
+            $_SESSION['messageType'] = 'error';
+
+            // Cargar la vista de reservas directamente
+            require_once('views/usuarios/menu.php');
+            require_once('views/usuarios/reservas.php');
+            require_once('views/components/layout/footer.php');
             $stmt->close();
             $conn->close();
-            header("Location: ?c=reservas&m=reservas&area=" . urlencode($areaId) . "&created=false");
-            exit;
+            return;
         }
         $stmt->close();
 
         // Crear la reserva si no hay conflicto
         $sql = "INSERT INTO reservas (FECHA_RESERVA, FECHA_FIN, ID_AREA_COMUN, ID_USUARIO, VALOR, ID_ESTADO_RESERVA) 
-                VALUES (?, ?, ?, ?, ?, 1)";
+            VALUES (?, ?, ?, ?, ?, 1)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssiid", $fechaInicio, $fechaFin, $areaId, $userId, $valorReserva);
 
         if ($stmt->execute()) {
             $this->enviarCorreoReserva($userId, $areaId, $fechaInicio, $fechaFin, $valorReserva);
             $_SESSION['reservationMessage'] = "Reserva creada con éxito. Se envió la información de la reserva al correo y pronto será confirmada.";
-            header("Location: ?c=reservas&m=reservas&area=" . urlencode($areaId) . "&created=true");
+            $_SESSION['messageType'] = 'success';
+            header("Location: ?c=galeria&m=galeria");
         } else {
             $_SESSION['reservationMessage'] = "Error al crear la reserva. Por favor, intente nuevamente.";
-            header("Location: ?c=reservas&m=reservas&area=" . urlencode($areaId) . "&created=false");
+            $_SESSION['messageType'] = 'error';
+            require_once('views/usuarios/menu.php');
+            require_once('views/usuarios/reservas.php');
+            require_once('views/components/layout/footer.php');
         }
 
         $stmt->close();
         $conn->close();
-        exit;
     }
+
+
+
+
+
 
 
 

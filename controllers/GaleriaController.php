@@ -5,6 +5,8 @@ class GaleriaController
 {
     public function galeria()
     {
+        session_start();
+
         // Conectar a la base de datos
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($conn->connect_error) {
@@ -24,7 +26,8 @@ class GaleriaController
 
         $conn->close();
 
-        // Pasar las áreas a la vista
+        // Pasar las áreas a la vista y el mensaje de éxito de la reserva si existe
+        $_SESSION['areas'] = $areas;
         require_once('views/usuarios/menu.php');
         require_once('views/usuarios/galeria.php');
         require_once('views/components/layout/footer.php');
