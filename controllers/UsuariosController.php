@@ -4,7 +4,6 @@ class UsuariosController
 {
    public function pqr()
    {
-      //  require_once('views/components/layout/head.php');
       require_once('views/usuarios/menu.php');
       require_once('views/usuarios/pqr.php');
       require_once('views/components/layout/footer.php');
@@ -15,6 +14,4 @@ class UsuariosController
       require_once('views/usuarios/cuota.php');
       require_once('views/components/layout/footer.php');
    }
-
-
 }

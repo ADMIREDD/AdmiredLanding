@@ -24,8 +24,17 @@ class AuthController
                 die("Conexión fallida: " . $conn->connect_error);
             }
 
-            // Consulta para obtener la contraseña encriptada del usuario
-            $sql = "SELECT * FROM users WHERE email = ?";
+            // Consulta para obtener el usuario y la cuota de administración
+            $sql = "SELECT 
+                        users.id AS user_id, 
+                        users.email, 
+                        users.password, 
+                        usuarios.NO_DOCUMENTO, 
+                        cuotas_administracion.ID AS CUOTAS_ADMIN_ID 
+                    FROM users
+                    LEFT JOIN usuarios ON users.usuario_id = usuarios.ID
+                    LEFT JOIN cuotas_administracion ON usuarios.ID = cuotas_administracion.USUARIO_ID
+                    WHERE users.email = ?";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("s", $email);
             $stmt->execute();
@@ -34,43 +43,31 @@ class AuthController
             if ($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
                 $hashedPassword = $row['password'];
-                $cuotasAdminId = $row['CUOTAS_ADMIN_ID'];
-                $userId = $row['ID'];
-                $docNumber = $row['NO_DOCUMENTO'];
 
-                // Verificar la contraseña utilizando password_verify
                 if (password_verify($password, $hashedPassword)) {
-                    // Usuario autenticado correctamente
                     $_SESSION['loggedin'] = true;
-                    $_SESSION['email'] = $email;
-                    $_SESSION['cuotasAdminId'] = $cuotasAdminId;
-                    $_SESSION['userId'] = $userId;
-                    $_SESSION['docNumber'] = $docNumber;
-                    header("Location: ?c=usuarios&m=cuota"); // Redirigir a la página de menú
+                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['userId'] = $row['user_id'];
+                    $_SESSION['cuotasAdminId'] = $row['CUOTAS_ADMIN_ID'];
+                    $_SESSION['docNumber'] = $row['NO_DOCUMENTO'];
+                    header("Location: ?c=usuarios&m=cuota");
                     exit;
                 } else {
-                    // Contraseña incorrecta
                     $error = "Correo electrónico o contraseña incorrectos";
                 }
-            } else {
-                // Usuario no encontrado
-                $error = "Correo electrónico o contraseña incorrectos";
             }
 
             $stmt->close();
             $conn->close();
         }
-        // Mostrar el formulario de inicio de sesión nuevamente con el error
         require_once('views/auth/login_form.php');
     }
 
     public function logout()
     {
-        // Cerrar sesión
         $_SESSION = array();
         session_destroy();
-        header("Location: index.php"); // Redirigir a la página principal
+        header("Location: index.php");
         exit;
     }
 }
-
