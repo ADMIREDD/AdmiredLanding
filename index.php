@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $controller = isset($_GET['c']) ? $_GET['c'] : 'Dashboard';
 $controller = ucfirst($controller) . 'Controller';
 $method = isset($_GET['m']) ? $_GET['m'] : 'dashboard';
@@ -16,4 +20,3 @@ if (file_exists($controllerFile)) {
 } else {
     echo "El controlador $controller no se ha encontrado.";
 }
-?>

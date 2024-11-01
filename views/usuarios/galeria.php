@@ -5,132 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de Áreas Comunes</title>
-    <link rel="stylesheet" href="./assets/css/reseras.css">
     <link rel="stylesheet" href="./assets/css/galeria.css">
-
-
+    <link rel="stylesheet" href="./assets/css/reservas.css">
 </head>
 
 <body>
     <h1 class="heading-1">ÁREAS COMUNES</h1>
-    <div class="container-products">
-        <!-- AREA 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <h2>GYM</h2><br>
-                <img src="assets/img/area_comun2.jpeg" alt="GIMNASIO" />
-            </div><br>
-            <div class="content-card-product">
-                <span class="add-cart">4
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <p class="price">$60.000 <span>$90.000</span></p>
-                </span>
-                <li><a href="?c=reservas&m=reservas&area=gym" class="btn-option5">Reservar</a></li>
 
-
-            </div>
-        </div>
-        <!-- AREA 2 -->
-        <div class="card-product">
-            <div class="container-img">
-                <h2>PISCINA</h2><br>
-                <img src="assets/img/area_comun1.jpeg" alt="PISCINA" />
-            </div><br>
-            <div class="content-card-product">
-                <span class="add-cart">
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <p class="price">$90.000 <span>$130.000</span></p>
-                </span>
-                <li><a href="?c=reservas&m=reservas&area=piscina" class="btn-option5">Reservar</a></li>
-            </div>
-        </div>
-        <!-- AREA 3 -->
-        <div class="card-product">
-            <div class="container-img">
-                <h2>ZONA BBQ</h2><br>
-                <img src="assets/img/area_comun4.jpeg" alt="ZONA BBQ" />
-            </div>
-            <div class="content-card-product">
-                <span class="add-cart">
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <p class="price">$80.000 <span>$100.000</span></p>
-                </span>
-                <li><a href="?c=reservas&m=reservas&area=bbq" class="btn-option5">Reservar</a></li>
-            </div>
-        </div>
-        <!-- AREA 4 -->
-        <div class="card-product">
-            <div class="container-img">
-                <h2>SALÓN COMUNAL</h2><br>
-                <img src="assets/img/area_comun3.jpeg" alt="SALÓN COMUNAL" />
-            </div><br>
-            <div class="content-card-product">
-                <span class="add-cart">
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <p class="price">$200.000 <span>$250.000</span></p>
-                </span>
-                <li><a href="?c=reservas&m=reservas&area=salon_comunal" class="btn-option5">Reservar</a></li>
-            </div>
+    <?php if (isset($_SESSION['reservationMessage']) && $_SESSION['messageType'] === 'success'): ?>
+    <div id="messageModal" class="modal" style="display: flex;">
+        <div class="modal-content" style="background-color: #4CAF50;">
+            <span class="close-btn" onclick="closeModal('messageModal')">&times;</span>
+            <p><?php echo htmlspecialchars($_SESSION['reservationMessage']); ?></p>
         </div>
     </div>
+    <?php unset($_SESSION['reservationMessage'], $_SESSION['messageType']); ?>
+    <?php endif; ?>
+
     <div class="container-products">
-        <!-- AREA 1 -->
+        <?php foreach ($_SESSION['areas'] as $area): ?>
         <div class="card-product">
             <div class="container-img">
-                <h2>TERRAZA EVENTOS</h2><br>
-                <img src="assets/img/area_comun2.jpeg" alt="GIMNASIO" />
+                <h2><?php echo htmlspecialchars($area['NOMBRE']); ?></h2><br>
+                <img src="<?php echo htmlspecialchars($area['IMAGEN_URL']); ?>"
+                    alt="<?php echo htmlspecialchars($area['NOMBRE']); ?>" />
             </div><br>
             <div class="content-card-product">
                 <span class="add-cart">
                     <i class="fa-solid fa-dollar-sign"></i>
-                    <p class="price">$60.000 <span>$90.000</span></p>
+                    <p class="price">$<?php echo number_format($area['PRECIO'], 2); ?></p>
                 </span>
-                <li><a href="?c=reservas&m=reservas&area=terraza_eventos" class="btn-option5">Reservar</a></li>
+                <li><a href="?c=reservas&m=reservas&area=<?php echo urlencode(strtolower($area['NOMBRE'])); ?>"
+                        class="btn-option5">Reservar</a></li>
             </div>
         </div>
-        <!-- AREA 2 -->
-        <div class="card-product">
-            <div class="container-img">
-                <h2>CANCHA FUTBOL</h2><br>
-                <img src="assets/img/area_comun1.jpeg" alt="PISCINA" />
-            </div><br>
-            <div class="content-card-product">
-                <span class="add-cart">
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <p class="price">$90.000 <span>$130.000</span></p>
-                </span>
-                <li><a href="?c=reservas&m=reservas&area=cancha_futbol" class="btn-option5">Reservar</a></li>
-            </div>
-        </div>
-        <!-- AREA 3 -->
-        <div class="card-product">
-            <div class="container-img">
-                <h2>SALON DE JUEGO</h2><br>
-                <img src="assets/img/area_comun4.jpeg" alt="ZONA BBQ" />
-            </div>
-            <div class="content-card-product">
-                <span class="add-cart">
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <p class="price">$80.000 <span>$100.000</span></p>
-                </span>
-                <li><a href="?c=reservas&m=reservas&area=salon_juegos" class="btn-option5">Reservar</a></li>
-            </div>
-        </div>
-        <!-- AREA 4 -->
-        <div class="card-product">
-            <div class="container-img">
-                <h2>SALÓN INFANTIL</h2><br>
-                <img src="assets/img/area_comun3.jpeg" alt="SALÓN COMUNAL" />
-            </div><br>
-            <div class="content-card-product">
-                <span class="add-cart">
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <p class="price">$200.000 <span>$250.000</span></p>
-                </span>
-                <li><a href="?c=reservas&m=reservas&area=salon_infantil" class="btn-option5">Reservar</a></li>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
+
+    <style>
+    .modal {
+        display: flex;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+    }
+    </style>
+
+    <script>
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+    window.onload = function() {
+        if (document.getElementById("messageModal")) {
+            setTimeout(function() {
+                closeModal("messageModal");
+            }, 8000);
+        }
+    };
+    </script>
 
 </body>
 

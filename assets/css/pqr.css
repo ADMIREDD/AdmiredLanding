@@ -15,21 +15,11 @@ body {
 
 /* Contenedor principal */
 .content-page {
-    background-image:url(https://www.conservamos.com/images/aseo-en-propiedad-horizontal/servicio-aseo-en-conjuntos-1.jpg);
+    background-image: url(https://www.conservamos.com/images/aseo-en-propiedad-horizontal/servicio-aseo-en-conjuntos-1.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-
-/* Contenedor del contenido */
-.content {
-    width: 100%;
-    max-width: 800px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(17, 0, 255, 0.6);
-    border-radius: 10px;
+    height: 69vh;
 }
 
 /* Título de la página */
@@ -102,4 +92,62 @@ form datalist {
 
 .styled-button:hover {
     background-color: #5a6268;
+}
+
+.container-form {
+    background-color: #eee;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.container-form h1 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container-form label {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+.container-form select,
+.container-form textarea,
+.container-form .button-submit,
+.container-form .button-file {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.container-form .button-submit {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.container-form .button-submit:hover {
+    background-color: #555;
+}
+
+.notification {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
 }
