@@ -16,7 +16,7 @@
                     <div class="login-container">
                         <h2>Iniciar sesión</h2>
                         <?php if (!empty($error)): ?>
-                        <p class="error-message"><?php echo $error; ?></p>
+                            <p class="error-message"><?php echo $error; ?></p>
                         <?php endif; ?>
                         <div class="form-group">
                             <label for="email">Correo electrónico:</label>

@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="./assets/css/principal.css" />
 	<link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
 	<link rel="stylesheet" href="./assets/css/reservas.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 	<title>ADMIRED</title>
 
@@ -24,25 +28,33 @@
 
 
 	<section class="container top-categories">
-		<h1 class="heading-1">ZONAS VERDES</h1>
-		<div class="container-categories">
-			<div><img
-					src="https://th.bing.com/th/id/R.b32d5570896d61925d2c13dd0527b13b?rik=thb6KSSEMIXV9A&pid=ImgRaw&r=0&sres=1&sresct=1"
-					alt="" class="card-category category-moca">
-
+		<ss class="heading-1">ZONAS VERDES</h1>
+			<div id="zonaVerdeCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="https://th.bing.com/th/id/R.b32d5570896d61925d2c13dd0527b13b?rik=thb6KSSEMIXV9A&pid=ImgRaw&r=0&sres=1&sresct=1"
+							class="d-block w-100" alt="Zona Verde 1">
+					</div>
+					<div class="carousel-item">
+						<img src="https://www.edifito.co/wp-content/uploads/2019/11/oasa.jpg" class="d-block w-100"
+							alt="Zona Verde 2">
+					</div>
+					<div class="carousel-item">
+						<img src="https://www.conservamos.com/images/aseo-en-propiedad-horizontal/servicio-aseo-en-conjuntos-1.jpg"
+							class="d-block w-100" alt="Zona Verde 3">
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#zonaVerdeCarousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#zonaVerdeCarousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
 			</div>
-			<div> <img src="https://www.edifito.co/wp-content/uploads/2019/11/oasa.jpg" alt=""
-					class="card-category category-expreso">
-
-			</div>
-			<div> <img
-					src="https://www.conservamos.com/images/aseo-en-propiedad-horizontal/servicio-aseo-en-conjuntos-1.jpg"
-					alt="" class="card-category category-expreso">
-
-			</div>
-
-		</div>
 	</section>
+
 
 	<section class="container top-products">
 		<h1 class="heading-1">AREAS COMUNES</h1>
@@ -197,8 +209,10 @@
 						de total de área construida hasta 102m2. Cantabria está ubicado al occidente de Bogotá en un
 						sector privilegiado y de alta valorización, con excelentes facilidades de acceso gracias a su
 						proximidad con las avenidas El Dorado, Ciudad de Cali y Boyacá, la disponibilidad de transporte
-						de todo tipo, incluido Transmilenio, y su cercanía a opciones ... <!--de entretenimiento como el Centro Comercial Gran Estación, Salitre Plaza, Dorado Plaza y Hayuelos; alternativas de abastecimiento con Home Center y PriceSmart; instituciones de salud como La Clínica Colombia y La Cruz Roja Aeropuerto; y sitios de interés entre los cuales se encuentran el Aeropuerto Internacional El Dorado, Compensar, el Parque Simón Bolívar, Maloka y Salitre Mágico.
-							--></p>
+						de todo tipo, incluido Transmilenio, y su cercanía a opciones ...
+						<!--de entretenimiento como el Centro Comercial Gran Estación, Salitre Plaza, Dorado Plaza y Hayuelos; alternativas de abastecimiento con Home Center y PriceSmart; instituciones de salud como La Clínica Colombia y La Cruz Roja Aeropuerto; y sitios de interés entre los cuales se encuentran el Aeropuerto Internacional El Dorado, Compensar, el Parque Simón Bolívar, Maloka y Salitre Mágico.
+							-->
+					</p>
 				</div>
 			</div>
 			<!--anuncio 3 -->

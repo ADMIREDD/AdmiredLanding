@@ -15,50 +15,68 @@ class AuthController
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $remember = isset($_POST['remember']);
 
-            // Conectar a la base de datos
-            $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            // Crear la URL del API
+            $apiUrl = 'http://localhost:8080/api/users/login';
 
-            // Verificar la conexión
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
+            // Inicializar cURL
+            $ch = curl_init($apiUrl);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+
+            // Enviar datos en formato JSON
+            $data = json_encode([
+                'email' => $email,
+                'password' => $password
+            ]);
+
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($data)
+            ]);
+
+            // Ejecutar la solicitud y obtener la respuesta
+            $response = curl_exec($ch);
+            if ($response === false) {
+                $error = 'Error de cURL: ' . curl_error($ch);
+                curl_close($ch);
+                require_once('views/auth/login_form.php');
+                return; // Salir del método
             }
 
-            // Consulta para obtener el usuario y la cuota de administración
-            $sql = "SELECT 
-                        users.id AS user_id, 
-                        users.email, 
-                        users.password, 
-                        usuarios.NO_DOCUMENTO, 
-                        cuotas_administracion.ID AS CUOTAS_ADMIN_ID 
-                    FROM users
-                    LEFT JOIN usuarios ON users.usuario_id = usuarios.ID
-                    LEFT JOIN cuotas_administracion ON usuarios.ID = cuotas_administracion.USUARIO_ID
-                    WHERE users.email = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $email);
-            $stmt->execute();
-            $result = $stmt->get_result();
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
 
-            if ($result->num_rows == 1) {
-                $row = $result->fetch_assoc();
-                $hashedPassword = $row['password'];
+            // Decodificar la respuesta JSON
+            $data = json_decode($response, true);
 
-                if (password_verify($password, $hashedPassword)) {
-                    $_SESSION['loggedin'] = true;
-                    $_SESSION['email'] = $row['email'];
-                    $_SESSION['userId'] = $row['user_id'];
-                    $_SESSION['cuotasAdminId'] = $row['CUOTAS_ADMIN_ID'];
-                    $_SESSION['docNumber'] = $row['NO_DOCUMENTO'];
-                    header("Location: ?c=usuarios&m=cuota");
-                    exit;
+            // Verificar si la respuesta es válida
+            if (is_null($data)) {
+                $error = 'Respuesta no válida de la API: ' . $response;
+                require_once('views/auth/login_form.php');
+                return;
+            }
+
+            // Verificar si el inicio de sesión fue exitoso
+            if ($httpCode == 200) {
+                $_SESSION['loggedin'] = true;
+                $_SESSION['token'] = $data['token'];
+                $_SESSION['userId'] = $data['userId'];
+
+                // Manejar "Recordarme"
+                if ($remember) {
+                    setcookie('email', $email, time() + (86400 * 30), "/"); // 30 días
                 } else {
-                    $error = "Correo electrónico o contraseña incorrectos";
+                    setcookie('email', '', time() - 3600, "/"); // Eliminar cookie
                 }
-            }
 
-            $stmt->close();
-            $conn->close();
+                header("Location: ?c=usuarios&m=cuota");
+                exit;
+            } else {
+                $error = $data['error'] ?? "Error al iniciar sesión. Código HTTP: $httpCode";
+            }
         }
         require_once('views/auth/login_form.php');
     }
