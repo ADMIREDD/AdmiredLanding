@@ -16,18 +16,22 @@
                     <div class="login-container">
                         <h2>Iniciar sesión</h2>
                         <?php if (!empty($error)): ?>
-                            <p class="error-message"><?php echo $error; ?></p>
+                            <p class="error-message" style="color: red;"><?php echo $error; ?></p>
                         <?php endif; ?>
                         <div class="form-group">
                             <label for="email">Correo electrónico:</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required
+                                value="<?php echo isset($_COOKIE['email']) ? $_COOKIE['email'] : ''; ?>">
                         </div>
                         <div class="form-group">
                             <label for="password">Contraseña:</label>
                             <input type="password" id="password" name="password" required
                                 autocomplete="current-password">
+                        </div>
+                        <div class="form-group">
                             <label class="label-checkbox">
-                                <input type="checkbox" name="remember" checked="checked">
+                                <input type="checkbox" name="remember"
+                                    <?php echo isset($_COOKIE['email']) ? 'checked' : ''; ?>>
                                 "Guardar datos en este equipo"
                             </label>
                         </div>
@@ -35,6 +39,7 @@
                         <button type="submit">Ingresar</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
