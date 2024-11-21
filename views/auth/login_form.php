@@ -6,6 +6,8 @@
     <title>Iniciar sesión</title>
     <link rel="icon" href="assets/img/favicon.png" type="icon">
     <link rel="stylesheet" href="assets/css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
