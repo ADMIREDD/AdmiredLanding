@@ -76,6 +76,21 @@
     background-color: #0056b3;
 }
 
+.btn-option5 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px #1e7e34;
+}
+
+.btn-option5:active {
+    box-shadow: 0 2px #1e7e34;
+    transform: translateY(2px);
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
     .form-wrapper .container-show-1 {
