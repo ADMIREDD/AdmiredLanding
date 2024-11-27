@@ -37,7 +37,7 @@ body {
 }
 
 .card-body {
-    padding: 30px;
+    padding: 12px;
 }
 
 /* Input fields */
@@ -81,20 +81,20 @@ select:focus {
 
 /* Result div styles */
 #result {
-    margin-top: 30px;
-    font-size: 18px;
+    margin-top: 0px;
+    font-size: 8px;
     text-align: center;
     color: #28a745;
-    font-weight: bold;
-    padding: 15px;
+    font-weight: 300;
+    padding: 1%;
     background-color: #e6f9ed;
     border: 1px solid #28a745;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 /* Container styles */
 .container-fluid {
-    padding: 40px;
+    padding: 0px;
     background-color: #e9ecef;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -103,6 +103,16 @@ select:focus {
     margin: auto;
     /* Centra horizontalmente */
 }
+
+body .recibo {
+    font-size: 20px !important;
+}
+
+body .recibo1 {
+    font-size: 20px !important;
+}
+
+
 
 .row {
     display: flex;
@@ -117,7 +127,7 @@ select:focus {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    min-height: calc(100vh - 160px);
+    min-height: calc(100vh - 200px);
     /* Calcula la altura menos el navbar y el footer */
     box-sizing: border-box;
     /* Asegura que padding se incluya dentro del tamaño */
