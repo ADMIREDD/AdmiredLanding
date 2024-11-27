@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de Áreas Comunes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/reservas.css"> <!-- Asegúrate de que este archivo esté bien enlazado -->
+    <link rel="stylesheet" href="assets/css/reservas.css">
+    <link rel="icon" href="assets/img/favicon.png" type="icon">
 </head>
 
 <body>

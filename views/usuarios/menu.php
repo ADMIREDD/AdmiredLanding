@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADMIRED</title>
     <link rel="stylesheet" href="assets/css/principal.css" />
+    <link rel="icon" href="assets/img/favicon.png" type="icon">
     <script src="assets/js/main.js"></script>
 </head>
 
