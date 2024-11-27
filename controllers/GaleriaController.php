@@ -1,5 +1,5 @@
 <?php
-require_once '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/config.php';
+require_once 'config.php';
 
 class GaleriaController
 {

@@ -1,58 +1,58 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Arial", sans-serif;
-    background-image: url(https://economipedia.com/wp-content/uploads/Propiedad-horizontal.jpg);
-    background-size: cover;
-    height: 155vh;
-    display: flow-root;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-image: url(https://economipedia.com/wp-content/uploads/Propiedad-horizontal.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flow-root;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title-box {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.map {
+  padding: 6px;
+  margin-bottom: -31px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.contact-info {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title-footer {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.informacion {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .content-page {
+    width: 90%;
   }
-  
-  .page-title-box {
-    text-align: center;
-    margin-bottom: 30px;
+
+  .map iframe {
+    width: 100%;
+    height: 300px;
   }
-  
-  .page-title {
-    font-size: 2.5rem;
-    margin: 0;
-    color: #333;
-  }
-  
-  .map {
-    margin: 20px 0;
-  
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .contact-info {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .title-footer {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .informacion {
-    font-size: 1.1rem;
-    color: #555;
-    margin: 5px 0;
-  }
-  
-  @media (max-width: 768px) {
-    .content-page {
-      width: 90%;
-    }
-  
-    .map iframe {
-      width: 100%;
-      height: 300px;
-    }
-  }
+}

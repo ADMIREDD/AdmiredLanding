@@ -3,15 +3,15 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/vendor/phpmailer/phpmailer/src/Exception.php';
-require '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/vendor/phpmailer/phpmailer/src/SMTP.php';
+require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 class UsuariosController
 {
    public function pqr()
    {
-      require_once '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/config.php';
+      require_once 'config.php';
       $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
       if ($conn->connect_error) {
@@ -72,7 +72,7 @@ class UsuariosController
          }
 
          // Conectar a la base de datos
-         require '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/config.php';
+         require 'config.php';
          $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
          if ($conn->connect_error) {
@@ -102,7 +102,7 @@ class UsuariosController
    private function sendPqrEmail($userId, $pqrTypeId, $message)
    {
       // Configuración para obtener datos del usuario
-      require_once '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/config.php';
+      require_once 'config.php';
       $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
       $sql = "SELECT u.email, CONCAT(usu.NOMBRE, ' ', usu.APELLIDO) AS nombre_completo 

@@ -3,11 +3,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/vendor/phpmailer/phpmailer/src/Exception.php';
-require '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/vendor/phpmailer/phpmailer/src/SMTP.php';
+require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
-require_once '/Applications/XAMPP/xamppfiles/htdocs/SENA/AdmiredLanding/config.php';
+require_once 'config.php';
 
 class ReservasController
 {
@@ -186,7 +186,7 @@ class ReservasController
             ";
 
             $mail->isHTML(true);
-            $mail->Subject = "Actualización de Reserva";
+            $mail->Subject = "Actualizacion de Reserva";
             $mail->Body = '<html><head><style>' . $styles . '</style></head><body>';
             $mail->Body .= '<div class="container">';
             $mail->Body .= '<h1>Actualización de Reserva</h1>';

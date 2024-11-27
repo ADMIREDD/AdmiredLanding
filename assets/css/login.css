@@ -77,7 +77,7 @@ button:hover[type="submit"] {
 .contenedor__todo {
     max-width: 500px;
     /* Reduce el ancho máximo */
-    padding: 20px;
+    padding: 43px;
     /* Reduce el padding */
 }
 
