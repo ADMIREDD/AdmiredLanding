@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de Áreas Comunes</title>
-    <link rel="stylesheet" href="./assets/css/reservas.css">
+    <link rel="stylesheet" href="assets/css/reservas.css">
 </head>
 
 <body>
@@ -23,6 +23,13 @@
                     <div id="mensaje-rojo" style="color: red; font-size: 14px; display: none; margin-bottom: 10px;">
                         La duración de la reserva debe ser entre 2 y 4 horas.
                     </div>
+                    <!-- Mensaje de error por conflicto de horario -->
+                    <div id="mensaje-conflicto"
+                        style="color: red; font-size: 14px; display: none; margin-bottom: 10px;">
+                        El área seleccionada ya está reservada en el horario seleccionado. Por favor, elige otro
+                        horario.
+                    </div>
+
 
                     <label for="fecha-hora-fin">Fecha y Hora de Fin:</label>
                     <input type="datetime-local" id="fecha-hora-fin" name="fecha-hora-fin" required>
@@ -48,18 +55,45 @@
     <script>
     // Validación de rango de tiempo
     document.getElementById("formulario").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita el envío tradicional del formulario
+
         const inicio = new Date(document.getElementById("fecha-hora-inicio").value);
         const fin = new Date(document.getElementById("fecha-hora-fin").value);
         const diferenciaHoras = (fin - inicio) / (1000 * 60 * 60);
-        // Mostrar el mensaje si la duración es inválida
+
+        // Validación de rango de tiempo
         const mensajeRojo = document.getElementById("mensaje-rojo");
+        const mensajeConflicto = document.getElementById("mensaje-conflicto");
+        mensajeConflicto.style.display = "none"; // Reinicia el mensaje de conflicto
+
         if (diferenciaHoras < 2 || diferenciaHoras > 4) {
-            event.preventDefault(); // Evitar el envío del formulario
-            mensajeRojo.style.display = "block"; // Mostrar el mensaje en rojo
+            mensajeRojo.style.display = "block"; // Mostrar el mensaje de rango inválido
+            return;
         } else {
             mensajeRojo.style.display = "none"; // Ocultar el mensaje si todo está bien
         }
+
+        // Envío del formulario usando fetch para validar en el servidor
+        const formData = new FormData(this);
+
+        fetch(this.action, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    // Mostrar mensaje de error por conflicto de horario
+                    mensajeConflicto.style.display = "block";
+                    mensajeConflicto.textContent = data.message;
+                } else {
+                    // Redirigir si todo fue exitoso
+                    window.location.href = "?c=galeria&m=galeria";
+                }
+            })
+            .catch(error => console.error("Error:", error));
     });
+
 
     // Cerrar automáticamente el mensaje después de 8 segundos
     window.onload = function() {

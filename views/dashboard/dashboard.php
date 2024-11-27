@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/principal.css" />
     <link rel="icon" href="assets/img/favicon.png" type="icon">
-    <link rel="stylesheet" href="./assets/css/reservas.css" />
+    <link rel="stylesheet" href="assets/css/reservas.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <title>ADMIRED</title>
-
-
 </head>
 
 <body>
@@ -24,38 +21,33 @@
             <p>PARA TU HOGAR Y DE TU FAMILIA</p>
         </div>
     </section>
-
-
-
     <section class="container top-categories">
-        <ss class="heading-1">ZONAS VERDES</h1>
-            <div id="zonaVerdeCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://th.bing.com/th/id/R.b32d5570896d61925d2c13dd0527b13b?rik=thb6KSSEMIXV9A&pid=ImgRaw&r=0&sres=1&sresct=1"
-                            class="d-block w-100" alt="Zona Verde 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.edifito.co/wp-content/uploads/2019/11/oasa.jpg" class="d-block w-100"
-                            alt="Zona Verde 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.conservamos.com/images/aseo-en-propiedad-horizontal/servicio-aseo-en-conjuntos-1.jpg"
-                            class="d-block w-100" alt="Zona Verde 3">
-                    </div>
+        <h1 class="heading-1">ZONAS VERDES</h1>
+        <div id="zonaVerdeCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://th.bing.com/th/id/R.b32d5570896d61925d2c13dd0527b13b?rik=thb6KSSEMIXV9A&pid=ImgRaw&r=0&sres=1&sresct=1"
+                        class="d-block w-100 carousel-image" alt="Zona Verde 1">
                 </div>
-                <a class="carousel-control-prev" href="#zonaVerdeCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#zonaVerdeCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="carousel-item">
+                    <img src="https://www.edifito.co/wp-content/uploads/2019/11/oasa.jpg"
+                        class="d-block w-100 carousel-image" alt="Zona Verde 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.conservamos.com/images/aseo-en-propiedad-horizontal/servicio-aseo-en-conjuntos-1.jpg"
+                        class="d-block w-100 carousel-image" alt="Zona Verde 3">
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#zonaVerdeCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#zonaVerdeCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </section>
-
-
     <section class="container top-products">
         <h1 class="heading-1">AREAS COMUNES</h1>
         <div class="container-products">
@@ -70,7 +62,7 @@
 
                         <p class="price">$90.000</p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
+                    <li><a href="?c=auth&m=show" class="btn-option6">Reservar</a></li>
                 </div>
             </div>
             <!-- AREA 2 -->
@@ -84,7 +76,7 @@
 
                         <p class="price">$60.000</p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
+                    <li><a href="?c=auth&m=show" class="btn-option6">Reservar</a></li>
                 </div>
             </div>
             <!-- AREA 3 -->
@@ -98,7 +90,7 @@
 
                         <p class="price">$80.000</p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
+                    <li><a href="?c=auth&m=show" class="btn-option6">Reservar</a></li>
                 </div>
             </div>
             <!-- AREA 4 -->
@@ -112,7 +104,7 @@
 
                         <p class="price">$200.000</p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
+                    <li><a href="?c=auth&m=show" class="btn-option6">Reservar</a></li>
                 </div>
             </div>
         </div>

@@ -183,6 +183,17 @@ html {
 	overflow: hidden;
 }
 
+.carousel-image {
+	width: 100%;
+	/* Ajusta al ancho del contenedor */
+	height: 350px;
+	/* Altura fija para todas las imágenes */
+	object-fit: cover;
+	/* Recorta la imagen sin distorsión */
+	object-position: center;
+	/* Centra el recorte */
+}
+
 .search-form input {
 	outline: none;
 	font-family: inherit;
@@ -218,33 +229,37 @@ html {
 /* ********************************** */
 .banner {
 	background-image:
-		url('../img/aptop8.jpeg');
-	height: 60rem;
+		url('../img/barner12.webp');
+	height: 55rem;
 	background-size: cover;
 	background-position: center;
+	margin-bottom: 16px;
 }
 
 .content-banner {
-	max-width: 90rem;
+	max-width: 100rem;
 	margin: 0 auto;
 	padding: 25rem 0;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .content-banner p {
-	color: var(--primary-color);
-	font-size: 1.2rem;
+	color: black;
+	font-size: 2.2rem;
 	margin-bottom: 1rem;
 	font-weight: 500;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+	margin-left: 65%;
 }
 
 .content-banner h2 {
-	color: #ffffff;
+	color: #000000;
 	font-size: 3.5rem;
 	font-weight: 500;
 	line-height: 1.2;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+	margin-top: -24%;
+	margin-left: 71%;
 }
 
 .content-banner a {

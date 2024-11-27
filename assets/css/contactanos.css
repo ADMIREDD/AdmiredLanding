@@ -23,7 +23,7 @@ body {
 
 .map {
   padding: 6px;
-  margin-bottom: -31px;
+  margin-bottom: 0px;
   border-radius: 10px;
   overflow: hidden;
 }

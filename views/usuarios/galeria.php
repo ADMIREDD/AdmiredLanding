@@ -26,7 +26,7 @@
                     <p class="price">$<?php echo number_format($area['PRECIO'], 2); ?></p>
                 </span>
                 <li><a href="?c=reservas&m=reservas&area=<?php echo urlencode(strtolower($area['NOMBRE'])); ?>"
-                        class="btn-option5">Reservar</a></li>
+                        class="btn-option6">Reservar</a></li>
             </div>
         </div>
         <?php endforeach; ?>

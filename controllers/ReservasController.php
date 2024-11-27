@@ -111,17 +111,15 @@ class ReservasController
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            // Si hay conflicto, mostrar el mensaje directamente en reservas.php
-            $_SESSION['reservationMessage'] = "El área seleccionada ya está reservada en el horario seleccionado. Por favor, elige otro horario.";
-            $_SESSION['messageType'] = 'error';
-
-            // Cargar la vista de reservas directamente
-            require_once('views/usuarios/menu.php');
-            require_once('views/usuarios/reservas.php');
-            require_once('views/components/layout/footer.php');
+            // Si hay conflicto, enviar respuesta JSON
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => false,
+                'message' => "El área seleccionada ya está reservada en el horario seleccionado. Por favor, elige otro horario."
+            ]);
             $stmt->close();
             $conn->close();
-            return;
+            exit;
         }
         $stmt->close();
 
