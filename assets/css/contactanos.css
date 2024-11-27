@@ -22,10 +22,11 @@ body {
 }
 
 .map {
-  padding: 6px;
-  margin-bottom: 0px;
+  padding: none;
+  margin-bottom: -15px;
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .contact-info {
