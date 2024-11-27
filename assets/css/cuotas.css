@@ -126,8 +126,8 @@ body .recibo1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    min-height: calc(100vh - 200px);
+    padding: 60px;
+    min-height: calc(100vh - 220px);
     /* Calcula la altura menos el navbar y el footer */
     box-sizing: border-box;
     /* Asegura que padding se incluya dentro del tamaño */

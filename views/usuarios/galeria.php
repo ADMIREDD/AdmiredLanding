@@ -9,8 +9,6 @@
 </head>
 
 <body>
-    <h1 class="heading-1">ÁREAS COMUNES</h1>
-
     <?php if (isset($_SESSION['reservationMessage']) && $_SESSION['messageType'] === 'success'): ?>
     <div id="messageModal" class="modal" style="display: flex;">
         <div class="modal-content" style="background-color: #4CAF50;">

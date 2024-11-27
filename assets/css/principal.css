@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-	--primary-color: #d3d5d3;
-	--background-color: #d3d5d3;
+	--primary-color: rgb(225, 225, 204);
+	--background-color: beige;
 	--dark-color: #000000;
 }
 
@@ -424,18 +424,19 @@ html {
 	color: #000000;
 }
 
-/* Products */
 .container-products {
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	/* Siempre 4 columnas */
-	gap: 4rem;
+	gap: 3rem;
+	margin: 12px 10px;
+	/* 7px arriba y abajo, 10px a los lados */
 }
 
 
+
 .card-product {
-	background-color: #cac3c3;
+	background-color: beige;
 	padding: 2rem 3rem;
 	border-radius: 1.5rem;
 	cursor: pointer;
