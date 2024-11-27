@@ -113,14 +113,14 @@ form datalist {
 .container-form h1 {
     font-size: 26px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 37px;
     text-align: center;
 }
 
 .container-form label {
     font-size: 22px;
-    margin-top: 17px;
-    display: block;
+    margin-top: -1px;
+    margin-bottom: -7px;
     color: #333;
 }
 

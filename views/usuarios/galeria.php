@@ -5,21 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de Áreas Comunes</title>
-    <link rel="stylesheet" href="./assets/css/reservas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reservas.css"> <!-- Asegúrate de que este archivo esté bien enlazado -->
 </head>
 
 <body>
-    <?php if (isset($_SESSION['reservationMessage']) && $_SESSION['messageType'] === 'success'): ?>
-    <div id="messageModal" class="modal" style="display: flex;">
-        <div class="modal-content" style="background-color: #4CAF50;">
-            <span class="close-btn" onclick="closeModal('messageModal')">&times;</span>
-            <p><?php echo htmlspecialchars($_SESSION['reservationMessage']); ?></p>
-        </div>
-    </div>
-    <?php unset($_SESSION['reservationMessage'], $_SESSION['messageType']); ?>
-    <?php endif; ?>
-
+    <!-- Aquí va tu contenido de la galería -->
     <div class="container-products">
+        <?php if (isset($_SESSION['areas']) && is_array($_SESSION['areas'])): ?>
         <?php foreach ($_SESSION['areas'] as $area): ?>
         <div class="card-product">
             <div class="container-img">
@@ -37,7 +30,21 @@
             </div>
         </div>
         <?php endforeach; ?>
+        <?php else: ?>
+        <p>No hay áreas disponibles para mostrar.</p>
+        <?php endif; ?>
     </div>
+
+    <!-- Modal para mostrar mensajes -->
+    <?php if (isset($_SESSION['reservationMessage']) && $_SESSION['messageType'] === 'success'): ?>
+    <div id="messageModal" class="modal" style="display: flex;">
+        <div class="modal-content" style="background-color: #4CAF50;">
+            <span class="close-btn" onclick="closeModal('messageModal')">&times;</span>
+            <p><?php echo htmlspecialchars($_SESSION['reservationMessage']); ?></p>
+        </div>
+    </div>
+    <?php unset($_SESSION['reservationMessage'], $_SESSION['messageType']); ?>
+    <?php endif; ?>
 
     <style>
     .modal {
@@ -87,6 +94,8 @@
     };
     </script>
 
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

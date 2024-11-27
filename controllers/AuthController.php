@@ -72,7 +72,8 @@ class AuthController
                     setcookie('email', '', time() - 3600, "/"); // Eliminar cookie
                 }
 
-                header("Location: ?c=usuarios&m=cuota");
+                header("Location: ?c=usuarios&m=galeria");
+
                 exit;
             } else {
                 $error = $data['error'] ?? "Error al iniciar sesión. Código HTTP: $httpCode";

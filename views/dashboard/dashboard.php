@@ -62,13 +62,13 @@
             <!-- AREA 1 -->
             <div class="card-product">
                 <div class="container-img">
-                    <h2>GYM</h2><br>
-                    <img src="assets\img\area_comun2.jpeg" alt="GIMNASIO" />
+                    <h2>PISCINA</h2><br>
+                    <img src="assets\img\area_comun1.jpeg" alt="PISCINA" />
                 </div><br>
                 <div class="content-card-product">
                     <span class="add-cart">
 
-                        <p class="price">$60.000 <span>$90.000</span></p>
+                        <p class="price">$90.000</p>
                     </span>
                     <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
                 </div>
@@ -76,13 +76,13 @@
             <!-- AREA 2 -->
             <div class="card-product">
                 <div class="container-img">
-                    <h2>PISCINA</h2><br>
-                    <img src="assets\img\area_comun1.jpeg" alt="PISCINA" />
+                    <h2>GYM</h2><br>
+                    <img src="assets\img\area_comun2.jpeg" alt="GIMNASIO" />
                 </div><br>
                 <div class="content-card-product">
                     <span class="add-cart">
 
-                        <p class="price">$90.000 <span>$130.000</span></p>
+                        <p class="price">$60.000</p>
                     </span>
                     <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
                 </div>
@@ -96,7 +96,7 @@
                 <div class="content-card-product">
                     <span class="add-cart">
 
-                        <p class="price">$80.000 <span>$100.000</span></p>
+                        <p class="price">$80.000</p>
                     </span>
                     <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
                 </div>
@@ -110,7 +110,7 @@
                 <div class="content-card-product">
                     <span class="add-cart">
 
-                        <p class="price">$200.000 <span>$250.000</span></p>
+                        <p class="price">$200.000</p>
                     </span>
                     <li><a href="?c=auth&m=show" class="btn-option5">Reservar</a></li>
                 </div>

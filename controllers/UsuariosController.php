@@ -168,4 +168,33 @@ class UsuariosController
       require_once('views/usuarios/cuota.php');
       require_once('views/components/layout/footer.php');
    }
+
+
+   public function galeria()
+   {
+      require_once 'config.php';
+      $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+      if ($conn->connect_error) {
+         die("Conexión fallida: " . $conn->connect_error);
+      }
+
+      $sql = "SELECT NOMBRE, IMAGEN_URL, PRECIO FROM areas_comunes";
+
+      $result = $conn->query($sql);
+
+      $areas = [];
+      if ($result && $result->num_rows > 0) {
+         while ($row = $result->fetch_assoc()) {
+            $areas[] = $row;
+         }
+      }
+      $_SESSION['areas'] = $areas; // Asignar las áreas a la sesión
+
+      $conn->close();
+
+      require_once('views/usuarios/menu.php');
+      require_once('views/usuarios/galeria.php');
+      require_once('views/components/layout/footer.php');
+   }
 }

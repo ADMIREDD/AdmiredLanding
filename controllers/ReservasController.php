@@ -69,6 +69,22 @@ class ReservasController
         $fechaFin = $_POST['fecha-hora-fin'];
         $areaId = $_POST['area_id'];
 
+        // Validar que el rango sea entre 2 y 4 horas
+        $fechaInicioObj = new DateTime($fechaInicio);
+        $fechaFinObj = new DateTime($fechaFin);
+        $diferenciaHoras = $fechaFinObj->diff($fechaInicioObj)->h;
+
+        if ($diferenciaHoras < 2 || $diferenciaHoras > 4) {
+            $_SESSION['reservationMessage'] = "La duración de la reserva debe ser entre 2 y 4 horas.";
+            $_SESSION['messageType'] = 'error';
+
+            // Cargar la vista de reservas directamente para mostrar el mensaje
+            require_once('views/usuarios/menu.php');
+            require_once('views/usuarios/reservas.php');
+            require_once('views/components/layout/footer.php');
+            return;
+        }
+
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($conn->connect_error) {
             die("Conexión fallida: " . $conn->connect_error);
@@ -87,8 +103,8 @@ class ReservasController
 
         // Comprobar si ya existe una reserva en el mismo área y horario
         $sql = "SELECT 1 FROM reservas WHERE ID_AREA_COMUN = ? AND 
-            ((? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR (? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR
-            (FECHA_RESERVA BETWEEN ? AND ?) OR (FECHA_FIN BETWEEN ? AND ?))";
+        ((? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR (? BETWEEN FECHA_RESERVA AND FECHA_FIN) OR
+        (FECHA_RESERVA BETWEEN ? AND ?) OR (FECHA_FIN BETWEEN ? AND ?))";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("issssss", $areaId, $fechaInicio, $fechaFin, $fechaInicio, $fechaFin, $fechaInicio, $fechaFin);
         $stmt->execute();
@@ -111,7 +127,7 @@ class ReservasController
 
         // Crear la reserva si no hay conflicto
         $sql = "INSERT INTO reservas (FECHA_RESERVA, FECHA_FIN, ID_AREA_COMUN, ID_USUARIO, VALOR, ID_ESTADO_RESERVA) 
-            VALUES (?, ?, ?, ?, ?, 1)";
+        VALUES (?, ?, ?, ?, ?, 1)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssiid", $fechaInicio, $fechaFin, $areaId, $userId, $valorReserva);
 
@@ -131,14 +147,6 @@ class ReservasController
         $stmt->close();
         $conn->close();
     }
-
-
-
-
-
-
-
-
 
 
 
