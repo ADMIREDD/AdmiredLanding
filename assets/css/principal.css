@@ -897,6 +897,10 @@ hr {
 	.vertical-separator {
 		display: none;
 	}
+
+	:root {
+		width: 114%;
+	}
 }
 
 
@@ -925,6 +929,9 @@ hr {
 		/* Mostrar cuando se active */
 	}
 
+	:root {
+		width: 114%;
+	}
 
 	html {
 		font-size: 55%;
@@ -1055,6 +1062,10 @@ hr {
 		line-height: 1.2;
 	}
 
+	:root {
+		width: 100%;
+	}
+
 	.heading-1 {
 		font-size: 2.8rem;
 	}
@@ -1085,7 +1096,7 @@ hr {
 	}
 
 	.container-products {
-		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
 		gap: 1rem;
 	}
 
@@ -1142,5 +1153,21 @@ hr {
 
 	.content p {
 		font-size: 1.6rem;
+	}
+
+	.container-img img {
+		width: 116%;
+		height: 140px;
+		object-fit: cover;
+		border-radius: 10px;
+		margin-left: -18px;
+		margin-bottom: 14px;
+		margin-top: -12px;
+	}
+
+	.footer {
+		background-color: var(--primary-color);
+		padding: 1.5rem 1rem;
+		color: var(--dark-color);
 	}
 }
