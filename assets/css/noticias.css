@@ -1,52 +1,54 @@
 body {
-    background-image: url(https://a0.muscache.com/im/pictures/c880c2f8-e15c-48dd-b6cb-d756ea3c51f9.jpg?im_w=720);
-    background-size: cover;
-    height: 100vh;
-  }
-  .page-title-box h1 {
-    text-align: center;
-    font-size: 2,5rem; /* Tamaño de fuente más grande para el título principal */
-  }
-  .parrafo {
-    font-size: 15px;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    color: black;
-  }
-  
-  .row {
-    max-width: 1200px;
-    margin: auto;
-    padding: 5%;
-    background: rgba(255, 255, 255, 0.6);
-    border-style: groove;
-    border-color: black;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .noticia-titulo {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-family: "Times New Roman", Times, serif;
-  }
-  
-  .noticia-titulo h1 {
-    font-size: 1rem; /* Tamaño de fuente más grande para el título */
-  }
-  
-  .noticia-fecha {
-    font-style: italic;
-    margin-bottom: 20px;
-  }
-  
-  .noticia-cuerpo {
-    line-height: 35px;
-    font-size: 15px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
+  background-image: url(https://www.360agenciainmobiliaria.com/inmuebles/gal1_20211116201114.jpg);
+  background-size: cover;
+  height: 100vh;
+}
 
-  
+.page-title-box h1 {
+  text-align: center;
+  font-size: 2, 5rem;
+  /* Tamaño de fuente más grande para el título principal */
+}
+
+.parrafo {
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+.row {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5%;
+  background: rgba(255, 255, 255, 0.6);
+  border-style: groove;
+  border-color: black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.noticia-titulo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.noticia-titulo h1 {
+  font-size: 1rem;
+  /* Tamaño de fuente más grande para el título */
+}
+
+.noticia-fecha {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.noticia-cuerpo {
+  line-height: 35px;
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
