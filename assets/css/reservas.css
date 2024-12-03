@@ -77,8 +77,22 @@ input[type="datetime-local"]:focus {
 }
 
 .btn-option6 {
+    display: inline-block;
     background-color: #068701;
     color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-option7 {
+    display: inline-block;
+    background-color: #068701;
+    color: #fff;
+    text-decoration: none;
     padding: 10px 20px;
     border: none;
     border-radius: 9px;

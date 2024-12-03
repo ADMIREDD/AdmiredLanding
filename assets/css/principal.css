@@ -229,7 +229,7 @@ html {
 /* ********************************** */
 .banner {
 	background-image:
-		url('../img/barner12.webp');
+		url('../img/barnerinicio.jpeg');
 	height: 55rem;
 	background-size: cover;
 	background-position: center;
@@ -241,6 +241,7 @@ html {
 	margin: 0 auto;
 	padding: 25rem 0;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	margin-left: 3%;
 }
 
 .content-banner p {
@@ -248,18 +249,18 @@ html {
 	font-size: 2.2rem;
 	margin-bottom: 1rem;
 	font-weight: 500;
-	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
-	margin-left: 65%;
+	text-shadow: 2px 2px 4px rgb(26 25 25 / 90%);
+	margin-left: 12%;
 }
 
 .content-banner h2 {
 	color: #000000;
-	font-size: 3.5rem;
+	font-size: 4.5rem;
 	font-weight: 500;
 	line-height: 1.2;
-	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
-	margin-top: -24%;
-	margin-left: 71%;
+	text-shadow: 2px 2px 4px rgb(0 0 0 / 90%);
+	margin-top: -19%;
+	margin-left: 9%;
 }
 
 .content-banner a {
@@ -529,7 +530,18 @@ html {
 }
 
 .content-card-product {
-	display: grid;
+	gap: 15px;
+	display: flex;
+	justify-items: center;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(4, min-content);
+	row-gap: 0rem;
+}
+
+.content-card-product1 {
+	margin-top: 10px;
+	gap: 15px;
+	display: flex;
 	justify-items: center;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(4, min-content);
@@ -537,7 +549,7 @@ html {
 }
 
 .text {
-	width: 129px;
+	width: 200px;
 	font-size: 12px;
 }
 

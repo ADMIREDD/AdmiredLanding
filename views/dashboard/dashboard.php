@@ -85,12 +85,12 @@
                     <h2>ZONA BBQ</h2><br>
                     <img src="assets\img\area_comun4.jpeg" alt="ZONA BBQ" />
                 </div>
-                <div class="content-card-product">
+                <div class="content-card-product1">
                     <span class="add-cart">
 
                         <p class="price">$80.000</p>
                     </span>
-                    <li><a href="?c=auth&m=show" class="btn-option6">Reservar</a></li>
+                    <li><a href="?c=auth&m=show" class="btn-option7">Reservar</a></li>
                 </div>
             </div>
             <!-- AREA 4 -->
